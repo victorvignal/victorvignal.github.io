@@ -14,9 +14,11 @@ a { text-decoration: none; color: inherit; }
 
 .container { width: min(1120px, 92%); margin: 0 auto; }
 
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
-.brand { display: flex; align-items: center; }
-.brand-logo { height: 86px; width: auto; display: block; }
+.nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 18px 0; column-gap: 20px; }
+.brand { display: flex; align-items: center; justify-self: start; }
+.brand-logo { height: 76px; width: auto; display: block; }
+.nav-title { justify-self: center; font-weight: 800; font-size: 1.35rem; color: var(--text); white-space: nowrap; }
+.nav .btn { justify-self: end; }
 
 .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center; padding: 42px 0 22px; }
 .tag { display: inline-block; background: #e8efff; color: #1e40af; padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: .9rem; }
@@ -83,13 +85,14 @@ h1 span { color: var(--primary); }
 }
 @media (max-width: 900px) {
   .cards, .stats { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 900px) {
-  .brand-logo { height: 68px; }
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav-title { font-size: 1.1rem; }
+  .brand-logo { height: 62px; }
 }
 
 @media (max-width: 600px) {
-  .nav { padding: 16px 0; }
-  .brand-logo { height: 52px; }
+  .nav { grid-template-columns: auto auto; row-gap: 8px; }
+  .nav-title { display: none; }
+  .nav { padding: 14px 0; }
+  .brand-logo { height: 48px; }
 }
