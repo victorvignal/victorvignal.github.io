@@ -15,8 +15,8 @@ a { text-decoration: none; color: inherit; }
 .container { width: min(1120px, 92%); margin: 0 auto; }
 
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
-.brand { font-weight: 800; font-size: 1.2rem; }
-.brand span { color: var(--primary); }
+.brand { display: flex; align-items: center; }
+.brand-logo { height: 44px; width: auto; display: block; }
 
 .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center; padding: 42px 0 22px; }
 .tag { display: inline-block; background: #e8efff; color: #1e40af; padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: .9rem; }
@@ -83,4 +83,8 @@ h1 span { color: var(--primary); }
 }
 @media (max-width: 900px) {
   .cards, .stats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .brand-logo { height: 34px; }
 }
