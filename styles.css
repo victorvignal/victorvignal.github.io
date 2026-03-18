@@ -16,7 +16,7 @@ a { text-decoration: none; color: inherit; }
 
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
 .brand { display: flex; align-items: center; }
-.brand-logo { height: 138px; width: auto; display: block; }
+.brand-logo { height: 138px; width: auto; display: block; transform: translateY(10%); }
 
 .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center; padding: 42px 0 22px; }
 .tag { display: inline-block; background: #e8efff; color: #1e40af; padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: .9rem; }
@@ -55,14 +55,15 @@ h1 span { color: var(--primary); }
 .process h2 { margin-top: 0; }
 .process img { width: 100%; border-radius: 12px; border: 1px solid #edf2f7; }
 
-.offer, .faq, .contact {
+.offer, .faq, .contact, .instagram-box {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 26px;
   margin: 22px auto;
 }
-.offer h2, .faq h2, .contact h2 { margin-top: 0; }
+.offer h2, .faq h2, .contact h2, .instagram-box h2 { margin-top: 0; }
+.instagram-box p { color: var(--muted); margin-bottom: 14px; }
 .price-box { display: flex; gap: 26px; flex-wrap: wrap; margin: 12px 0 6px; }
 .muted { color: var(--muted); margin-bottom: 2px; }
 .price { margin: 0; font-size: 1.6rem; font-weight: 800; }
