@@ -1,0 +1,23 @@
+<svg width="1000" height="220" viewBox="0 0 1000 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="220" rx="18" fill="#F8FAFC"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#0F172A">
+    <circle cx="120" cy="110" r="34" fill="#DBEAFE"/>
+    <text x="108" y="118" font-size="22" font-weight="700">1</text>
+    <text x="70" y="172" font-size="18" font-weight="600">Mensagem</text>
+
+    <circle cx="360" cy="110" r="34" fill="#DBEAFE"/>
+    <text x="348" y="118" font-size="22" font-weight="700">2</text>
+    <text x="300" y="172" font-size="18" font-weight="600">Qualificação</text>
+
+    <circle cx="600" cy="110" r="34" fill="#DBEAFE"/>
+    <text x="588" y="118" font-size="22" font-weight="700">3</text>
+    <text x="552" y="172" font-size="18" font-weight="600">Lead quente</text>
+
+    <circle cx="840" cy="110" r="34" fill="#DBEAFE"/>
+    <text x="828" y="118" font-size="22" font-weight="700">4</text>
+    <text x="808" y="172" font-size="18" font-weight="600">Fechamento</text>
+  </g>
+  <path d="M165 110H315" stroke="#93C5FD" stroke-width="6" stroke-linecap="round"/>
+  <path d="M405 110H555" stroke="#93C5FD" stroke-width="6" stroke-linecap="round"/>
+  <path d="M645 110H795" stroke="#93C5FD" stroke-width="6" stroke-linecap="round"/>
+</svg>
