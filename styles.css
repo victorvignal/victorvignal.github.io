@@ -86,9 +86,10 @@ h1 span { color: var(--primary); }
 .offer ul { padding-left: 18px; color: var(--muted); }
 .offer li { margin: 6px 0; }
 
-.faq details { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: #fff; }
-.faq summary { cursor: pointer; font-weight: 700; }
+.faq details { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: var(--surface); }
+.faq summary { cursor: pointer; font-weight: 700; color: var(--text); }
 .faq p { color: var(--muted); }
+.faq details[open] { box-shadow: var(--shadow); }
 
 .contact p { color: var(--muted); }
 .small { font-size: .92rem; }
