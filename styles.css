@@ -29,7 +29,7 @@ a { text-decoration: none; color: inherit; }
 
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
 .brand { display: flex; align-items: center; }
-.brand-logo { height: 132px; width: auto; display: block; object-fit: contain; }
+.brand-logo { height: 132px; width: auto; display: block; object-fit: contain; transform: translateY(8px); }
 .nav-actions { display: flex; gap: 10px; align-items: center; }
 .theme-toggle { height: 44px; width: 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-size: 1.1rem; box-shadow: var(--shadow); }
 .theme-toggle:hover { transform: translateY(-1px); }
@@ -130,11 +130,11 @@ h1 span { color: var(--primary); }
 }
 @media (max-width: 900px) {
   .cards, .stats, .positioning-grid, .comparison-grid { grid-template-columns: 1fr; }
-  .brand-logo { height: 104px; }
+  .brand-logo { height: 104px; transform: translateY(6px); }
 }
 
 @media (max-width: 600px) {
   .nav { padding: 10px 0; }
-  .brand-logo { height: 84px; }
+  .brand-logo { height: 84px; transform: translateY(4px); }
   .theme-toggle { height: 40px; width: 40px; }
 }
