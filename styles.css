@@ -71,6 +71,35 @@ h1 span { color: var(--primary); }
 .process h2 { margin-top: 0; }
 .process img { width: 100%; border-radius: 12px; border: 1px solid #edf2f7; }
 
+.positioning, .comparison {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  margin: 22px auto;
+  box-shadow: var(--shadow);
+}
+.positioning h2, .comparison h2 { margin-top: 0; }
+.positioning > p { color: var(--muted); margin-top: 0; max-width: 880px; }
+.positioning-grid, .comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+.positioning-grid article, .comparison-grid article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.positioning-grid p, .comparison-grid li { color: var(--muted); }
+.comparison-grid { grid-template-columns: 1fr 1fr; }
+.comparison-grid .bad { border-color: #f1b8b8; }
+.comparison-grid .good { border-color: #9ad0ad; }
+.comparison-grid ul { margin: 8px 0 0; padding-left: 18px; }
+.comparison-grid li { margin: 6px 0; }
+
 .offer, .faq, .contact {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -100,7 +129,7 @@ h1 span { color: var(--primary); }
   .hero { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .cards, .stats { grid-template-columns: 1fr; }
+  .cards, .stats, .positioning-grid, .comparison-grid { grid-template-columns: 1fr; }
   .brand-logo { height: 104px; }
 }
 
