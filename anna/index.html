@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Clara & Victor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #fdf6f0;
+      color: #3a2e2a;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      background: linear-gradient(160deg, #fdf6f0 0%, #fde8d8 100%);
+    }
+
+    .hero-hearts {
+      font-size: 1.4rem;
+      letter-spacing: 8px;
+      opacity: 0.5;
+      margin-bottom: 1.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      line-height: 1.1;
+      color: #c0694a;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a07060;
+      margin-bottom: 3rem;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c0956a;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(6px); opacity: 0.5; }
+    }
+
+    /* ── TIMELINE ── */
+    .section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #c0694a;
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #f0b090, #c0694a, #f0b090);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.5rem;
+      padding-left: 2rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.55rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #c0694a;
+      border: 2px solid #fdf6f0;
+      box-shadow: 0 0 0 2px #c0694a;
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c0956a;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #3a2e2a;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #6a5550;
+    }
+
+    /* ── PHOTOS ── */
+    .photos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .photo-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(180, 100, 70, 0.15);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .photo-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .photo-card.wide img {
+      height: 400px;
+    }
+
+    .photo-caption {
+      padding: 1rem 1.2rem;
+      background: white;
+      font-size: 0.85rem;
+      color: #a07060;
+      font-style: italic;
+    }
+
+    /* ── MESSAGES ── */
+    .messages-section {
+      background: linear-gradient(135deg, #fde8d8 0%, #fdf0e8 100%);
+      padding: 5rem 2rem;
+    }
+
+    .messages-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .message-bubble {
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .message-bubble.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bubble {
+      display: inline-block;
+      padding: 0.8rem 1.2rem;
+      border-radius: 18px;
+      max-width: 80%;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .bubble-anna {
+      background: white;
+      color: #3a2e2a;
+      border-bottom-left-radius: 4px;
+    }
+
+    .bubble-victor {
+      background: #c0694a;
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message-bubble.right {
+      text-align: right;
+    }
+
+    .msg-name {
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #a07060;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── COUNTER ── */
+    .counter-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: #fdf6f0;
+    }
+
+    .counter-label {
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a07060;
+      margin-bottom: 1rem;
+    }
+
+    .counter-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      color: #c0694a;
+      line-height: 1;
+    }
+
+    .counter-unit {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a07060;
+      margin-top: 0.5rem;
+    }
+
+    /* ── FINAL ── */
+    .final {
+      text-align: center;
+      padding: 6rem 2rem 8rem;
+      background: linear-gradient(160deg, #fde8d8 0%, #fdf6f0 100%);
+    }
+
+    .final h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      color: #c0694a;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .final p {
+      font-size: 1rem;
+      color: #6a5550;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .heart-big {
+      font-size: 3rem;
+      margin-top: 2.5rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    @media (max-width: 480px) {
+      .photos-grid { grid-template-columns: 1fr; }
+      .photo-card.wide { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-hearts">♡ ♡ ♡</div>
+    <h1>Anna Clara<br>&amp; Victor</h1>
+    <p class="subtitle">A nossa história</p>
+    <div class="scroll-hint">↓ rolar</div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <h2 class="section-title">Como começou tudo</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">1 de fevereiro de 2026</div>
+        <div class="timeline-title">A primeira mensagem 💬</div>
+        <div class="timeline-desc">
+          "Heyy — é a Anna." Duas palavras que mudaram tudo. 
+          A conversa começou por Hatestown e foi até de madrugada — música, 
+          filosofia, true crime, planos. Nenhum dos dois dormiu cedo.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Fevereiro de 2026</div>
+        <div class="timeline-title">Palácio do Catete 🌿</div>
+        <div class="timeline-desc">
+          O primeiro encontro foi no Palácio do Catete — o jardim, 
+          o piquenique, a tarde que parou. O começo de tudo presencialmente.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">8 de março de 2026</div>
+        <div class="timeline-title">Ficamos juntos ❤️</div>
+        <div class="timeline-desc">
+          Meia-noite em ponto. "pedido" — ela perdeu o game e ganhou o coração. 
+          Desde então: te amo antes de dormir, bom dia com saudade, 
+          e fotos sem parar.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="section-title">Momentos nossos</h2>
+    <div class="photos-grid">
+      <div class="photo-card wide">
+        <img src="foto2.jpg" alt="Anna e Victor">
+        <div class="photo-caption">8 de março — o dia que ficamos juntos ♡</div>
+      </div>
+      <div class="photo-card">
+        <img src="foto1.jpg" alt="Anna e Victor">
+        <div class="photo-caption">espelho não mente</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGES -->
+  <section class="messages-section">
+    <div class="messages-inner">
+      <h2 class="section-title" style="margin-bottom: 2.5rem;">Palavras de verdade</h2>
+
+      <div class="message-bubble">
+        <div class="msg-name">victor</div>
+        <div class="bubble bubble-victor">vc é mto interessante e bonita pra nunca ter namorado</div>
+      </div>
+
+      <div class="message-bubble right">
+        <div class="msg-name">anna</div>
+        <div class="bubble bubble-anna">vc é bem bonito viu</div>
+      </div>
+
+      <div class="message-bubble">
+        <div class="msg-name">victor</div>
+        <div class="bubble bubble-victor">vc é linda</div>
+      </div>
+
+      <div class="message-bubble right">
+        <div class="msg-name">anna</div>
+        <div class="bubble bubble-anna">boa noite e dorme bem — te amo</div>
+      </div>
+
+      <div class="message-bubble">
+        <div class="msg-name">victor</div>
+        <div class="bubble bubble-victor">boa noite amor — te amo</div>
+      </div>
+
+      <div class="message-bubble right">
+        <div class="msg-name">anna</div>
+        <div class="bubble bubble-anna">tô fofa? 🫶</div>
+      </div>
+
+      <div class="message-bubble">
+        <div class="msg-name">victor</div>
+        <div class="bubble bubble-victor">demais</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTER -->
+  <section class="counter-section">
+    <div class="counter-label">juntos há</div>
+    <div class="counter-number" id="dias">0</div>
+    <div class="counter-unit">dias</div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <h2>Briga passa.<br>A gente fica.</h2>
+    <p>
+      Desde aquela primeira mensagem de madrugada, passando pelo Catete, 
+      até o pedido de meia-noite — cada momento contou. 
+      Cada "te amo" antes de dormir contou. 
+      Você conta.
+    </p>
+    <div class="heart-big">♥</div>
+  </section>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.timeline-item, .photo-card, .message-bubble').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Days counter — since March 8, 2026
+    function updateDays() {
+      const start = new Date('2026-03-08T00:00:00-03:00');
+      const now = new Date();
+      const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+      document.getElementById('dias').textContent = diff;
+    }
+    updateDays();
+  </script>
+
+</body>
+</html>
