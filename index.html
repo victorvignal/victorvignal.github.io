@@ -1,478 +1,184 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anna Clara & Victor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #fdf6f0;
-      color: #3a2e2a;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(160deg, #fdf6f0 0%, #fde8d8 100%);
-      position: relative;
-    }
-
-    .hero-hearts {
-      font-size: 1.4rem;
-      letter-spacing: 8px;
-      opacity: 0.5;
-      margin-bottom: 1.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      line-height: 1.1;
-      color: #c0694a;
-      margin-bottom: 1rem;
-    }
-
-    .hero .subtitle {
-      font-size: 0.95rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a07060;
-      margin-bottom: 3rem;
-    }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #c0956a;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); opacity: 1; }
-      50% { transform: translateY(6px); opacity: 0.5; }
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: #c0694a;
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    /* ── TIMELINE ── */
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #f0b090, #c0694a, #f0b090);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3.5rem;
-      padding-left: 2rem;
-      opacity: 0;
-      transform: translateX(-20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2.55rem;
-      top: 0.3rem;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #c0694a;
-      border: 2px solid #fdf6f0;
-      box-shadow: 0 0 0 2px #c0694a;
-    }
-
-    .timeline-date {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #c0956a;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: #3a2e2a;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #6a5550;
-    }
-
-    /* ── PHOTOS ── */
-    .photos-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .photo-card {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(180, 100, 70, 0.15);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .photo-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-card.wide {
-      grid-column: 1 / -1;
-    }
-
-    .photo-card.wide img {
-      height: 400px;
-    }
-
-    .photo-caption {
-      padding: 1rem 1.2rem;
-      background: white;
-      font-size: 0.85rem;
-      color: #a07060;
-      font-style: italic;
-    }
-
-    /* ── MESSAGES ── */
-    .messages-section {
-      background: linear-gradient(135deg, #fde8d8 0%, #fdf0e8 100%);
-      padding: 5rem 2rem;
-    }
-
-    .messages-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .message-bubble {
-      margin-bottom: 0.8rem;
-      opacity: 0;
-      transform: translateY(15px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .message-bubble.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .bubble {
-      display: inline-block;
-      padding: 0.75rem 1.1rem;
-      border-radius: 18px;
-      max-width: 80%;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .bubble-anna {
-      background: white;
-      color: #3a2e2a;
-      border-bottom-left-radius: 4px;
-    }
-
-    .bubble-victor {
-      background: #c0694a;
-      color: white;
-      border-bottom-right-radius: 4px;
-    }
-
-    .message-bubble.right {
-      text-align: right;
-    }
-
-    .msg-name {
-      font-size: 0.72rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #a07060;
-      margin-bottom: 0.3rem;
-    }
-
-    .msg-time {
-      font-size: 0.68rem;
-      color: #c0956a;
-      margin-top: 0.2rem;
-      opacity: 0.7;
-    }
-
-    /* ── COUNTER ── */
-    .counter-section {
-      text-align: center;
-      padding: 6rem 2rem;
-      background: #fdf6f0;
-    }
-
-    .counter-label {
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a07060;
-      margin-bottom: 1rem;
-    }
-
-    .counter-number {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 12vw, 7rem);
-      color: #c0694a;
-      line-height: 1;
-    }
-
-    .counter-unit {
-      font-size: 1.1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a07060;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 480px) {
-      .photos-grid { grid-template-columns: 1fr; }
-      .photo-card.wide { grid-column: 1; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Automação IA | WhatsApp com IA em 48h</title>
+  <meta name="description" content="Automação de WhatsApp com IA em 48h para negócios locais: resposta rápida, qualificação de leads e alertas de lead quente." />
+  <meta property="og:title" content="Victor Automação IA" />
+  <meta property="og:description" content="WhatsApp com IA em 48h para captar e qualificar leads." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./og-cover.png" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon.png" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <header class="container nav">
+    <div class="brand">
+      <img src="./assets/logo1-cropped.png" alt="Victor Automação IA" class="brand-logo" />
+    </div>
+    <div class="nav-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
+      <a class="btn btn-outline" href="#contato">Falar comigo</a>
+    </div>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-hearts">♡ ♡ ♡</div>
-    <h1>Anna Clara<br>&amp; Victor</h1>
-    <p class="subtitle">a nossa história</p>
-    <div class="scroll-hint">↓ rolar</div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="section">
-    <h2 class="section-title">como começou</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">1 de fevereiro de 2026</div>
-        <div class="timeline-title">a primeira mensagem 💬</div>
-        <div class="timeline-desc">
-          "Heyy — é a Anna." e aí foi. falamos de Hadestown, mitologia, harry potter, 
-          true crime, distopia, tudo. nenhum dos dois foi dormir cedo.
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="tag">WhatsApp IA para negócios locais</p>
+        <h1>Pare de perder cliente no WhatsApp em <span>48h</span></h1>
+        <p class="sub">Eu implemento automação com IA que responde dúvidas, qualifica leads e te avisa quando o cliente está pronto para fechar.</p>
+        <div class="cta-row">
+          <a class="btn" id="cta-top" href="https://wa.me/5521000000000?text=Quero%20automatizar%20meu%20WhatsApp%20com%20IA" target="_blank" rel="noopener">Quero meu WhatsApp IA</a>
+          <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
+        </div>
+        <div class="proof">
+          <span>✅ Entrega em 48h</span>
+          <span>✅ Sem trocar número</span>
+          <span>✅ Setup + mensalidade</span>
         </div>
       </div>
+      <div class="hero-art">
+        <img src="./assets/hero-visual.svg" alt="Visual de automação WhatsApp" />
+      </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">fevereiro de 2026</div>
-        <div class="timeline-title">palácio do catete 🌿</div>
-        <div class="timeline-desc">
-          primeiro encontro. jardim, piquenique, a tarde que parou. 
-          e aí já era.
+    <section class="container stats">
+      <article><strong>48h</strong><p>pra ativar o básico</p></article>
+      <article><strong>3 etapas</strong><p>resposta, triagem e alerta</p></article>
+      <article><strong>1 canal</strong><p>você continua no WhatsApp atual</p></article>
+    </section>
+
+    <section class="container cards" id="como-funciona">
+      <article class="card">
+        <h3>1) Resposta instantânea</h3>
+        <p>Seu WhatsApp responde perguntas repetidas em segundos e reduz fila de atendimento.</p>
+      </article>
+      <article class="card">
+        <h3>2) Qualificação automática</h3>
+        <p>O fluxo coleta nome, interesse, urgência e orçamento para separar curiosos de compradores.</p>
+      </article>
+      <article class="card">
+        <h3>3) Alerta de lead quente</h3>
+        <p>Quando aparecer oportunidade real, você recebe aviso no WhatsApp/Telegram e entra na hora.</p>
+      </article>
+    </section>
+
+    <section class="container process">
+      <h2>Como funciona na prática</h2>
+      <img src="./assets/process.svg" alt="Fluxo de atendimento: mensagem, qualificação, lead quente e fechamento" />
+    </section>
+
+    <section class="container positioning" id="diferencial">
+      <h2>Não é robô automático. É IA com contexto real da empresa.</h2>
+      <p>Nosso sistema não dispara respostas engessadas. Ele interpreta a conversa, compreende a intenção do cliente e responde com base na sua operação — usando base de conhecimento + raciocínio guiado para conduzir o atendimento com naturalidade.</p>
+      <div class="positioning-grid">
+        <article>
+          <h3>Base da sua empresa (RAG)</h3>
+          <p>Consulta serviços, políticas e informações do seu negócio antes de responder.</p>
+        </article>
+        <article>
+          <h3>Raciocínio guiado</h3>
+          <p>Não só busca texto: interpreta intenção, faz perguntas úteis e conduz a conversa para próximo passo.</p>
+        </article>
+        <article>
+          <h3>Escala com segurança</h3>
+          <p>Responde com naturalidade, mas com limites definidos; quando necessário, encaminha para humano.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container comparison">
+      <h2>Automação comum x Sistema inteligente</h2>
+      <div class="comparison-grid">
+        <article class="bad">
+          <h3>Robô automático</h3>
+          <ul>
+            <li>Respostas fixas e repetitivas</li>
+            <li>Não entende nuance da conversa</li>
+            <li>Gera frustração no cliente</li>
+          </ul>
+        </article>
+        <article class="good">
+          <h3>Nosso sistema com IA + RAG</h3>
+          <ul>
+            <li>Usa a base da sua empresa antes de responder</li>
+            <li>Interpreta intenção e conduz triagem natural</li>
+            <li>Escala atendimento sem perder qualidade</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container offer" id="planos">
+      <h2>Oferta de entrada</h2>
+      <div class="price-box">
+        <div>
+          <p class="muted">Implantação</p>
+          <p class="price">R$ 490</p>
+        </div>
+        <div>
+          <p class="muted">Mensalidade</p>
+          <p class="price">R$ 150</p>
         </div>
       </div>
+      <ul>
+        <li>IA treinada na base da empresa (RAG padrão)</li>
+        <li>Captação e qualificação de leads</li>
+        <li>Mensagem fora do horário</li>
+        <li>Alerta de lead quente</li>
+        <li>Integração com planilha para organização dos atendimentos</li>
+      </ul>
+      <a class="btn" id="cta-offer" href="https://wa.me/5521000000000?text=Quero%20fechar%20o%20pacote%20Start" target="_blank" rel="noopener">Fechar pacote Start</a>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">8 de março de 2026 — meia-noite</div>
-        <div class="timeline-title">ficamos juntos ❤️</div>
-        <div class="timeline-desc">
-          nervosamente fiz o pedido e deu certo. ela ficou comigo. 
-          valeu a pena.
+    <section class="container faq" id="faq">
+      <h2>Perguntas rápidas</h2>
+      <details>
+        <summary>Preciso trocar meu número?</summary>
+        <p>Não. Mantemos seu número atual e configuramos a automação no fluxo de atendimento.</p>
+      </details>
+      <details>
+        <summary>Em quanto tempo fica pronto?</summary>
+        <p>Com onboarding completo, o básico fica ativo em até 48h úteis.</p>
+      </details>
+      <details>
+        <summary>Funciona para qualquer negócio?</summary>
+        <p>Foco principal em negócios locais que dependem de WhatsApp (estética, clínica, serviços).</p>
+      </details>
+    </section>
+
+    <section class="container demo" id="demo">
+      <h2>Teste na prática: ARIA 🩻</h2>
+      <p class="sub">Assistente de radiologia por IA — RAG com base de conhecimento real de 100K+ trechos de livros e artigos.</p>
+      <div class="chat-widget" id="chat-widget">
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-welcome">
+            <p>🩻 <strong>ARIA</strong> — Assistente de Radiologia por IA</p>
+            <p>Pergunte sobre anatomia, técnicas, patologias ou diagnóstico por imagem.</p>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <textarea id="chat-input" placeholder="Digite sua pergunta..." rows="1"></textarea>
+          <button id="chat-send" onclick="ariaSend()">➤</button>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="container contact" id="contato">
+      <h2>Quer ativar hoje?</h2>
+      <p>Me chama no WhatsApp e eu te mando onboarding + escopo em 1 mensagem.</p>
+      <a class="btn" id="cta-bottom" href="https://wa.me/5521000000000?text=Quero%20come%C3%A7ar%20hoje" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <p class="small">Instagram: <strong>@victorautomacaoia</strong></p>
+    </section>
+  </main>
 
-  <!-- PHOTOS -->
-  <section class="section" style="padding-top: 0;">
-    <h2 class="section-title">a gente</h2>
-    <div class="photos-grid">
-      <div class="photo-card wide">
-        <img src="anna/foto6.jpg" alt="Anna e Victor">
-        <div class="photo-caption">esse corredor nos viu</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/foto3.jpg" alt="Anna e Victor">
-        <div class="photo-caption">kkkk</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/foto4.jpg" alt="Anna e Victor">
-        <div class="photo-caption">elevador de novo</div>
-      </div>
-      <div class="photo-card wide">
-        <img src="anna/foto5.jpg" alt="Anna e Victor">
-        <div class="photo-caption">série + sofá = não sai daqui não</div>
-      </div>
-      <div class="photo-card wide">
-        <img src="anna/pedido1.jpg" alt="Anna e Victor">
-        <div class="photo-caption">8 de março ♡</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/pedido3.jpg" alt="Anna e Victor">
-        <div class="photo-caption">nessa noite</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/pedido2.jpg" alt="Anna e Victor">
-        <div class="photo-caption">♡</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/foto2.jpg" alt="Anna e Victor">
-        <div class="photo-caption">bom dia amor</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/foto1.jpg" alt="Anna e Victor">
-        <div class="photo-caption">espelho não mente</div>
-      </div>
-      <div class="photo-card">
-        <img src="anna/lugar.jpg" alt="Catete">
-        <div class="photo-caption">catete 🌿</div>
-      </div>
-    </div>
-  </section>
+  <footer class="container footer">
+    <small>© <span id="year"></span> Victor Automação IA · Rio de Janeiro</small>
+  </footer>
 
-  <!-- MESSAGES -->
-  <section class="messages-section">
-    <div class="messages-inner">
-      <h2 class="section-title" style="margin-bottom: 2.5rem;">mensagens reais</h2>
-
-      <div class="message-bubble">
-        <div class="msg-name">victor</div>
-        <div class="bubble bubble-victor">vc é mto interessante e bonita pra nunca ter namorado</div>
-        <div class="msg-time">02/02 — 02:05</div>
-      </div>
-
-      <div class="message-bubble right">
-        <div class="msg-name">anna</div>
-        <div class="bubble bubble-anna">vc é bem bonito viu</div>
-        <div class="msg-time">02/02 — 02:29</div>
-      </div>
-
-      <div class="message-bubble">
-        <div class="msg-name">victor</div>
-        <div class="bubble bubble-victor">vc é linda</div>
-        <div class="msg-time">02/02 — 02:30</div>
-      </div>
-
-      <div class="message-bubble">
-        <div class="msg-name">victor</div>
-        <div class="bubble bubble-victor">to com saudade do seu abraço</div>
-        <div class="msg-time">09/03 — 19:48</div>
-      </div>
-
-      <div class="message-bubble right">
-        <div class="msg-name">anna</div>
-        <div class="bubble bubble-anna">to com saudade tb</div>
-        <div class="msg-time">28/02 — 20:31</div>
-      </div>
-
-      <div class="message-bubble">
-        <div class="msg-name">victor</div>
-        <div class="bubble bubble-victor">linda demais</div>
-        <div class="msg-time">08/03 — 13:42</div>
-      </div>
-
-      <div class="message-bubble right">
-        <div class="msg-name">anna</div>
-        <div class="bubble bubble-anna">boa noite e dorme bem — te amo</div>
-        <div class="msg-time">08/03 — 00:49</div>
-      </div>
-
-      <div class="message-bubble">
-        <div class="msg-name">victor</div>
-        <div class="bubble bubble-victor">boa noite amor — te amo</div>
-        <div class="msg-time">08/03 — 00:49</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- COUNTER -->
-  <section class="counter-section">
-    <div class="counter-label">juntos há</div>
-    <div class="counter-number" id="dias">0</div>
-    <div class="counter-unit">dias</div>
-  </section>
-
-  <script>
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.timeline-item, .photo-card, .message-bubble').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Days counter — since March 8, 2026
-    const start = new Date('2026-03-08T00:00:00-03:00');
-    const diff = Math.floor((new Date() - start) / (1000 * 60 * 60 * 24));
-    document.getElementById('dias').textContent = diff;
-  </script>
-
+  <script src="./script.js"></script>
 </body>
 </html>
-
