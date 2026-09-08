@@ -148,11 +148,17 @@ main { overflow-x: clip; }
   gap: 12px;
 }
 
-.brand__mark {
-  width: 36px;
-  height: 36px;
+.brand__mark,
+.brand > svg {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
   color: var(--primary);
   flex-shrink: 0;
+  display: block;
 }
 
 [data-theme="dark"] .brand__mark {
@@ -1124,9 +1130,14 @@ main { overflow-x: clip; }
 }
 
 .footer__brand svg {
-  width: 24px;
-  height: 24px;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
   color: var(--text-muted);
+  display: block;
 }
 
 .footer__diamond {
