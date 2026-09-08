@@ -4,210 +4,365 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Victor Automação IA | WhatsApp com IA em 48h</title>
-  <meta name="description" content="Automação de WhatsApp com IA em 48h para negócios locais: resposta rápida, qualificação de leads e alertas de lead quente." />
-  <meta property="og:title" content="Victor Automação IA" />
-  <meta property="og:description" content="WhatsApp com IA em 48h para captar e qualificar leads." />
+  <meta name="description" content="Eu implemento automação com IA no seu WhatsApp em 48h. Resposta instantânea, qualificação automática de leads e alerta de lead quente pra clínicas, estética e serviços." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:title" content="Victor Automação IA · WhatsApp com IA em 48h" />
+  <meta property="og:description" content="Resposta, qualificação e alerta — no seu número, sem trocar." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-cover.png" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta property="og:image" content="assets/og-cover.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="container nav">
-    <div class="brand">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="brand-logo" aria-label="Victor Automação IA">
-      <polygon points="50,12 14,55 86,55"/>
-      <polygon points="50,88 14,45 86,45" opacity="0.55"/>
-    </svg>
-      <div class="brand-text">
-        Victor Automação IA
-        <small>WhatsApp · Atendimento</small>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="Victor Automação IA">
+      <svg class="brand__mark" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+        <polygon points="14,18 6,32 38,38 50,28"/>
+        <polygon points="86,18 94,32 62,38 50,28"/>
+        <polygon points="50,50 32,82 68,82"/>
+        <polygon points="50,42 58,52 50,62 42,52" class="brand__diamond"/>
+      </svg>
+      <div class="brand__text">
+        <strong>Victor</strong>
+        <span>Automação IA · WhatsApp</span>
+      </div>
+    </a>
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#planos">Plano</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a id="cta-top" class="btn btn--primary" href="https://wa.me/5521920148845?text=Quero%20automatizar%20meu%20WhatsApp%20com%20IA" target="_blank" rel="noopener">
+        Falar comigo
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <div class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          Atendimento com IA no WhatsApp
+        </div>
+        <h1 class="hero__title">
+          Pare de perder cliente<br>
+          no seu <em>WhatsApp</em>.<br>
+          <span class="hero__title-emph">Em 48h, no ar.</span>
+        </h1>
+        <p class="hero__sub">
+          Eu implemento automação com IA que responde, qualifica leads e te avisa
+          quando o cliente está pronto para fechar — <strong>no seu número, sem trocar</strong>.
+        </p>
+        <div class="hero__cta-row">
+          <a id="cta-hero" class="btn btn--primary btn--lg" href="https://wa.me/5521920148845?text=Quero%20meu%20WhatsApp%20com%20IA%20em%2048h" target="_blank" rel="noopener">
+            Quero meu WhatsApp IA
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#como-funciona">
+            Ver como funciona
+          </a>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <strong>48h</strong>
+            <span>setup completo</span>
+          </div>
+          <div class="hero__meta-item">
+            <strong>0</strong>
+            <span>troca de número</span>
+          </div>
+          <div class="hero__meta-item">
+            <strong>24/7</strong>
+            <span>atende sempre</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <svg class="hero__art-svg" viewBox="0 0 600 600" fill="none">
+          <g class="hero__art-lines" stroke="currentColor" stroke-width="1" opacity="0.15">
+            <line x1="0" y1="0" x2="600" y2="600"/>
+            <line x1="600" y1="0" x2="0" y2="600"/>
+            <line x1="300" y1="0" x2="300" y2="600"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+          </g>
+          <polygon points="300,80 480,300 300,520 120,300" class="hero__art-poly hero__art-poly-1"/>
+          <polygon points="300,140 420,300 300,460 180,300" class="hero__art-poly hero__art-poly-2"/>
+          <polygon points="300,200 360,300 300,400 240,300" class="hero__art-poly hero__art-poly-3"/>
+          <polygon points="190,210 110,300 300,250 490,300 410,210 290,260" class="hero__art-logo"/>
+          <polygon points="300,260 332,300 300,340 268,300" class="hero__art-diamond"/>
+          <g class="hero__art-bubble" transform="translate(380, 180)">
+            <rect width="160" height="58" rx="8"/>
+            <text x="16" y="22">WHATSAPP · IA</text>
+            <text x="16" y="44" class="hero__art-bubble-sub">resposta em 8s</text>
+          </g>
+        </svg>
       </div>
     </div>
-    <div class="nav-actions">
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">🌙</button>
-      <a class="btn" id="cta-top" href="https://wa.me/5521920148845?text=Quero%20automatizar%20meu%20WhatsApp%20com%20IA" target="_blank" rel="noopener">Falar comigo</a>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <section class="trustbar">
+    <div class="container">
+      <p class="trustbar__text">Pensado pra quem atende por WhatsApp:</p>
+      <ul class="trustbar__list">
+        <li>Clínicas</li>
+        <li>Estética</li>
+        <li>Serviços</li>
+        <li>Educação</li>
+        <li>Alimentação</li>
+      </ul>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="container hero">
-      <div>
-        <div class="hero-eyebrow">WhatsApp IA para negócios locais</div>
-        <h1>Pare de perder cliente <br>no WhatsApp <em>em 48h</em>.</h1>
-        <p class="hero-sub">Eu implemento automação com IA que responde dúvidas, qualifica leads e te avisa quando o cliente está pronto para fechar — sem trocar seu número.</p>
-        <div class="cta-row">
-          <a class="btn" id="cta-cta" href="https://wa.me/5521920148845?text=Quero%20automatizar%20meu%20WhatsApp%20com%20IA" target="_blank" rel="noopener">Quero meu WhatsApp IA →</a>
-          <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
-        </div>
-        <div class="hero-meta">
-          <span>Entrega em 48h</span>
-          <span>Sem trocar número</span>
-          <span>Setup + mensalidade</span>
-        </div>
+  <!-- ========== PROBLEMA ========== -->
+  <section class="section section--problem">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">O problema</span>
+        <h2>Você está <em>perdendo venda</em> sem perceber.</h2>
+        <p>Quase todo lead chega pelo WhatsApp. Se ninguém responde em 5 minutos, ele desiste e vai pro seu concorrente.</p>
       </div>
-      <div class="hero-art">
-        <img src="assets/hero-visual.svg" alt="Visual de automação WhatsApp" />
+      <div class="stats">
+        <article class="stat">
+          <strong>5min</strong>
+          <p>é o tempo máximo que um lead quente espera por resposta</p>
+        </article>
+        <article class="stat">
+          <strong>62%</strong>
+          <p>das mensagens comerciais ficam sem resposta no WhatsApp</p>
+        </article>
+        <article class="stat">
+          <strong>3x</strong>
+          <p>aumenta a conversão quando o atendimento é instantâneo</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="container stats">
-      <article><strong>48h</strong><p>pra ativar o básico</p></article>
-      <article><strong>3 etapas</strong><p>resposta, triagem e alerta</p></article>
-      <article><strong>1 canal</strong><p>você continua no WhatsApp atual</p></article>
-    </section>
-
-    <section class="container section">
-      <div class="section-head">
-        <div class="section-eyebrow">Como funciona</div>
-        <h2>Do lead frio ao lead quente,<br>no automático.</h2>
-        <p>Três camadas que pegam o cliente onde ele está e conduzem até o fechamento — sem parecer um robô.</p>
+  <!-- ========== SOLUÇÃO ========== -->
+  <section class="section section--solution" id="como-funciona">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Como funciona</span>
+        <h2>Três camadas de automação,<br>zero robô engessado.</h2>
+        <p>Não disparo de respostas fixas. A IA consulta a base da sua empresa, interpreta a intenção e conduz a conversa como um humano faria.</p>
       </div>
-      <div class="cards" id="como-funciona">
+      <div class="cards">
         <article class="card">
-          <div class="card-num">01 — RESPOSTA</div>
+          <div class="card__num">01</div>
           <h3>Resposta instantânea</h3>
-          <p>Seu WhatsApp responde perguntas repetidas em segundos. Acaba a fila do "oi, tudo bem?" que ninguém responde a tempo.</p>
+          <p>Atende em segundos, 24/7, sem fila. Sai da resposta automática genérica do WhatsApp Business e vai pra uma IA que conhece o seu negócio.</p>
+          <div class="card__tag">~8s resposta média</div>
         </article>
         <article class="card">
-          <div class="card-num">02 — QUALIFICAÇÃO</div>
+          <div class="card__num">02</div>
           <h3>Qualificação automática</h3>
-          <p>O fluxo coleta nome, interesse, urgência e orçamento — separa quem está só curioso de quem quer fechar.</p>
+          <p>Coleta nome, procedimento de interesse, urgência e orçamento. Separa curioso de comprador com perguntas naturais, sem interrogatório.</p>
+          <div class="card__tag">5 campos por lead</div>
         </article>
         <article class="card">
-          <div class="card-num">03 — ALERTA</div>
+          <div class="card__num">03</div>
           <h3>Alerta de lead quente</h3>
-          <p>Quando aparece oportunidade real, você recebe aviso no WhatsApp/Telegram e entra na hora.</p>
+          <p>Quando aparece oportunidade real, você recebe aviso no WhatsApp/Telegram e entra na hora. Bot só conduz o que dá pra automatizar.</p>
+          <div class="card__tag">handoff inteligente</div>
         </article>
       </div>
-    </section>
-
-    <section class="container section process">
-      <div class="section-head">
-        <div class="section-eyebrow">Na prática</div>
-        <h2>Como funciona na prática</h2>
-        <p>O fluxo da mensagem inicial até o alerta humano, em segundos.</p>
+      <div class="process">
+        <img src="assets/process.svg" alt="Fluxo de atendimento: cliente, bot atende, qualifica, encaminha, humano entra" />
       </div>
-      <img src="assets/process.svg" alt="Fluxo de atendimento" class="process-img" />
-    </section>
+    </div>
+  </section>
 
-    <section class="container section">
-      <div class="positioning">
-        <div class="positioning-head">
-          <h2>Não é robô automático.<br>É IA com contexto da sua empresa.</h2>
-          <p>Nosso sistema não dispara respostas engessadas. Ele interpreta a conversa, compreende a intenção do cliente e responde com base na sua operação — usando base de conhecimento + raciocínio guiado para conduzir o atendimento com naturalidade.</p>
-        </div>
-        <div class="positioning-grid">
-          <div>
-            <h3>Base da sua empresa (RAG)</h3>
-            <p>Consulta serviços, políticas e informações do seu negócio antes de responder.</p>
-          </div>
-          <div>
-            <h3>Raciocínio guiado</h3>
-            <p>Não só busca texto: interpreta intenção, faz perguntas úteis e conduz a conversa para próximo passo.</p>
-          </div>
-          <div>
-            <h3>Escala com segurança</h3>
-            <p>Responde com naturalidade, mas com limites definidos; quando necessário, encaminha para humano.</p>
-          </div>
-        </div>
+  <!-- ========== DIFERENCIAL ========== -->
+  <section class="section section--diff">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">O diferencial</span>
+        <h2>Não é robô automático.<br>É IA com contexto da sua empresa.</h2>
       </div>
-    </section>
-
-    <section class="container section">
-      <div class="section-head">
-        <div class="section-eyebrow">Comparativo</div>
-        <h2>Automação comum x Sistema inteligente</h2>
-      </div>
-      <div class="comparison">
+      <div class="diff-grid">
         <article>
-          <h3>Robô automático</h3>
-          <ul>
-            <li>Respostas fixas e repetitivas</li>
-            <li>Não entende nuance da conversa</li>
-            <li>Gera frustração no cliente</li>
-          </ul>
+          <h3>Base de conhecimento (RAG)</h3>
+          <p>Antes de responder, a IA consulta seus serviços, preços, políticas e tom de voz. Ela fala como se fosse alguém do seu time.</p>
         </article>
         <article>
-          <h3>IA + RAG do seu negócio</h3>
-          <ul>
-            <li>Usa a base da sua empresa antes de responder</li>
-            <li>Interpreta intenção e conduz triagem natural</li>
-            <li>Escala atendimento sem perder qualidade</li>
-          </ul>
+          <h3>Raciocínio guiado</h3>
+          <p>Não só busca texto — interpreta a intenção do lead, faz perguntas úteis e conduz a conversa pro próximo passo.</p>
+        </article>
+        <article>
+          <h3>Escala com segurança</h3>
+          <p>Responde com naturalidade, mas com limites claros. Quando precisa, encaminha pro humano sem perder o histórico.</p>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="container section" id="planos">
-      <div class="offer">
-        <div class="offer-inner">
-          <div>
-            <h2>Oferta de entrada · Start</h2>
-            <p class="blurb">Pacote enxuto pra quem quer testar e ver resultado rápido antes de escalar.</p>
-            <a class="btn btn-accent" id="cta-offer" href="https://wa.me/5521920148845?text=Quero%20fechar%20o%20pacote%20Start" target="_blank" rel="noopener">Fechar pacote Start →</a>
+  <!-- ========== PLANO ========== -->
+  <section class="section section--plan" id="planos">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Plano de entrada</span>
+        <h2>Start: pra você testar<br>sem arriscar.</h2>
+        <p>Pacote enxuto, com tudo que precisa pra começar a capturar lead em 48h. Sem fidelidade, sem complicação.</p>
+      </div>
+      <div class="plan">
+        <div class="plan__price">
+          <div class="plan__price-item">
+            <div class="plan__price-label">Implantação</div>
+            <div class="plan__price-value">R$ 490</div>
+            <div class="plan__price-meta">pagamento único</div>
           </div>
-          <div>
-            <div class="offer-prices">
-              <div>
-                <div class="offer-label">Implantação</div>
-                <div class="offer-price">R$ 490</div>
-              </div>
-              <div>
-                <div class="offer-label">Mensalidade</div>
-                <div class="offer-price">R$ 150<span style="font-size:14px;font-weight:500;color:var(--muted);">/mês</span></div>
-              </div>
-            </div>
-            <ul class="offer-list">
-              <li>IA treinada na base da empresa (RAG padrão)</li>
-              <li>Captação e qualificação automática de leads</li>
-              <li>Mensagem fora do horário (24h)</li>
-              <li>Alerta de lead quente</li>
-              <li>Integração com planilha para organização</li>
-            </ul>
+          <div class="plan__price-item">
+            <div class="plan__price-label">Mensalidade</div>
+            <div class="plan__price-value">R$ 150<small>/mês</small></div>
+            <div class="plan__price-meta">cancela quando quiser</div>
           </div>
         </div>
+        <div class="plan__features">
+          <h3>O que está incluso</h3>
+          <ul>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              IA treinada na base da sua empresa (RAG padrão)
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Resposta instantânea 24/7 no seu número
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Qualificação automática de leads (nome, interesse, urgência, orçamento)
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Alerta de lead quente via WhatsApp/Telegram
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Handoff pro humano com histórico preservado
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Integração com planilha pra organização dos atendimentos
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              48h de setup, do zero até o primeiro lead qualificado
+            </li>
+          </ul>
+          <a id="cta-offer" class="btn btn--accent btn--lg plan__cta" href="https://wa.me/5521920148845?text=Quero%20fechar%20o%20pacote%20Start" target="_blank" rel="noopener">
+            Fechar pacote Start
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <p class="plan__fine">Setup inicial em 48h úteis. Sem fidelidade, cancela quando quiser.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="container section">
-      <div class="section-head">
-        <div class="section-eyebrow">FAQ</div>
+  <!-- ========== FAQ ========== -->
+  <section class="section section--faq" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">FAQ</span>
         <h2>Perguntas rápidas</h2>
       </div>
-      <div class="faq-list" id="faq">
-        <div class="faq-item">
-          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Preciso trocar meu número?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Não. Mantemos seu número atual do WhatsApp e configuramos a automação direto no fluxo de atendimento. Zero troca, zero prejuízo pros clientes que já têm seu número salvo.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Em quanto tempo fica pronto?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Com onboarding completo, o básico fica ativo em até 48h úteis. Ajustes finos e integrações adicionais geralmente pedem mais uns dias.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Funciona para qualquer negócio?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Foco principal em negócios locais que dependem de WhatsApp: estética, clínicas, serviços, alimentação, educação. Outros modelos funcionam mas pedem adaptação.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se o cliente quiser falar com humano?<span class="faq-icon">+</span></button>
-          <div class="faq-a">A qualquer momento o atendente humano é notificado e entra na conversa. O bot só conduz o que dá pra automatizar sem perder qualidade.</div>
-        </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Preciso trocar meu número?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Não. Mantemos seu número atual do WhatsApp e configuramos a automação direto no fluxo de atendimento. Zero troca, zero prejuízo pros clientes que já têm seu número salvo.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Em quanto tempo fica pronto?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Com onboarding completo, o básico fica ativo em até 48h úteis. Ajustes finos e integrações adicionais geralmente pedem mais uns dias.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Funciona pra qualquer negócio?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Foco principal em negócios locais que dependem de WhatsApp: estética, clínicas, serviços, alimentação, educação. Outros modelos funcionam, mas pedem adaptação.</div>
+        </details>
+        <details class="faq-item">
+          <summary>E se o cliente quiser falar com humano?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">A qualquer momento o atendente humano é notificado e entra na conversa. O bot só conduz o que dá pra automatizar sem perder qualidade.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o RAG?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Antes de responder, a IA consulta a base de conhecimento da sua empresa: serviços, preços, políticas, tom de voz. Ela fala como alguém do seu time, não como um chatbot genérico.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Tem fidelidade?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Não. Mensalidade sem fidelidade, cancela quando quiser. A implantação é um pagamento único que cobre o setup.</div>
+        </details>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="container section contact" id="contato">
-      <h2>Quer ativar hoje?</h2>
-      <p>Me chama no WhatsApp e eu te mando onboarding + escopo em 1 mensagem.</p>
-      <a class="btn" id="cta-bottom" href="https://wa.me/5521920148845?text=Quero%20come%C3%A7ar%20hoje" target="_blank" rel="noopener">Falar no WhatsApp →</a>
-      <p class="small">Instagram: <strong>@victorautomacaoia</strong></p>
-    </section>
-  </main>
+  <!-- ========== CTA FINAL ========== -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final__box">
+        <div class="kicker kicker--light">Próximo passo</div>
+        <h2>Quer ativar hoje?</h2>
+        <p>Me chama no WhatsApp. Em uma mensagem eu te mando onboarding + escopo do pacote Start.</p>
+        <div class="cta-final__row">
+          <a id="cta-bottom" class="btn btn--primary btn--lg" href="https://wa.me/5521920148845?text=Quero%20come%C3%A7ar%20hoje" target="_blank" rel="noopener">
+            Falar no WhatsApp
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="https://wa.me/5521920148845?text=Quero%20tirar%20uma%20d%C3%BAvida" target="_blank" rel="noopener">
+            Tirar uma dúvida
+          </a>
+        </div>
+        <p class="cta-final__ig">Instagram: <strong>@victorautomacaoia</strong></p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <small>© <span id="year"></span> Victor Automação IA · Rio de Janeiro</small>
-  </footer>
+</main>
 
-  <script src="assets/script.js"></script>
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__row">
+      <a href="#top" class="footer__brand" aria-label="Victor Automação IA">
+        <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+          <polygon points="14,18 6,32 38,38 50,28"/>
+          <polygon points="86,18 94,32 62,38 50,28"/>
+          <polygon points="50,50 32,82 68,82"/>
+          <polygon points="50,42 58,52 50,62 42,52" class="footer__diamond"/>
+        </svg>
+        <span>Victor Automação IA</span>
+      </a>
+      <div class="footer__meta">
+        <span>Rio de Janeiro</span>
+        <span aria-hidden="true">·</span>
+        <span>© <span id="year"></span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

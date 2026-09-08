@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <!-- hero diamond + V -->
+  <polygon points="600,90 900,300 600,510 300,300" fill="#fafafa" opacity="0.05"/>
+  <polygon points="600,160 770,300 600,440 430,300" fill="#fafafa" opacity="0.08"/>
+  <polygon points="600,220 670,300 600,380 530,300" fill="#25d366"/>
+  <text x="600" y="100" text-anchor="middle" fill="#fafafa" font-family="ui-sans-serif,system-ui" font-weight="700" font-size="34" letter-spacing="-1">WhatsApp com IA em 48h</text>
+  <text x="600" y="595" text-anchor="middle" fill="#fafafa" opacity="0.7" font-family="ui-sans-serif,system-ui" font-weight="500" font-size="18">Victor Automação IA · Rio de Janeiro</text>
+</svg>
