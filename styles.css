@@ -168,6 +168,17 @@ main { overflow-x: clip; }
 .brand__diamond {
   fill: var(--accent);
 }
+img.brand__mark,
+img.brand__mark[src$=".png"] {
+  width: 68px !important;
+  height: 36px !important;
+  max-width: 68px !important;
+  max-height: 36px !important;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 
 .brand__text strong {
   display: block;
