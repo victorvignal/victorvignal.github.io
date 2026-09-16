@@ -1546,13 +1546,14 @@ img.brand__mark[src$=".png"] {
   grid-template-columns: 1fr;
   gap: var(--sp-5);
   margin-bottom: var(--sp-6);
+  align-items: center;
 }
 
 @media (min-width: 900px) {
   .demo-grid {
     grid-template-columns: minmax(0, 1fr) 360px;
     gap: var(--sp-6);
-    align-items: start;
+    align-items: center;
   }
 }
 
