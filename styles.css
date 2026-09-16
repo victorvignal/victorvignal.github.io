@@ -428,8 +428,12 @@ img.brand__mark[src$=".png"] {
 .hero__title-emph {
   display: inline-block;
   position: relative;
-  color: var(--primary);
-  /* sem ::before/::after — limpar */
+  color: var(--text);
+  /* usa --text que já muda automaticamente no dark mode */
+}
+
+[data-theme="dark"] .hero__title-emph {
+  color: var(--text);
 }
 
 .hero__sub {
@@ -1510,4 +1514,29 @@ img.brand__mark[src$=".png"] {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
+}
+
+
+/* ========== DARK MODE HERO (garantir legibilidade) ========== */
+[data-theme="dark"] .hero__title {
+  color: var(--text);
+}
+[data-theme="dark"] .hero__sub {
+  color: var(--text-muted);
+}
+[data-theme="dark"] .hero__sub strong {
+  color: var(--text);
+}
+[data-theme="dark"] .hero__meta-item strong {
+  color: var(--text);
+}
+[data-theme="dark"] .hero__meta-item span {
+  color: var(--text-muted);
+}
+[data-theme="dark"] .eyebrow {
+  color: var(--text);
+}
+[data-theme="dark"] .brand-highlight {
+  /* o gradient fica ok, mas garante fallback */
+  color: var(--text);
 }
