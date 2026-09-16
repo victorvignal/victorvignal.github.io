@@ -1774,12 +1774,10 @@ img.brand__mark[src$=".png"] {
 
 /* ========== MOBILE OPTIMIZATIONS ========== */
 
-/* tipografia fluida (clamp permite escalar entre min e max) */
-html {
-  font-size: clamp(15px, 4vw, 16px);
-}
-
 @media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
   /* reduz paddings das seções no mobile */
   .section {
     padding: 56px 0 !important;
