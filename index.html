@@ -311,11 +311,37 @@
 
         <div class="chat-body">
           <div class="msg msg--user">Oi, tem horário amanhã 14h?</div>
-          <div class="msg msg--bot">Oi, Pedro! 👋 Tenho às 14h ou 15h30 com o Carlos. Qual prefere?</div>
+
+          <div class="msg-wrap bot">
+            <div class="msg-arrow arrow-left">↘</div>
+            <div class="annotation">
+              <strong>Consulta dados em tempo real</strong>
+              <span>Busca horários disponíveis no Google Calendar</span>
+            </div>
+            <div class="msg msg--bot">Oi, Pedro! 👋 Tenho às 14h ou 15h30 com o Carlos. Qual prefere?</div>
+          </div>
+
           <div class="msg msg--user">15h30 tá ótimo</div>
-          <div class="msg msg--bot">Perfeito! Confirmo o agendamento? 📝</div>
+
+          <div class="msg-wrap bot">
+            <div class="msg-arrow arrow-left">↘</div>
+            <div class="annotation">
+              <strong>Raciocínio contextual</strong>
+              <span>Entende "amanhã", "tá ótimo", adapta resposta</span>
+            </div>
+            <div class="msg msg--bot">Perfeito! Confirmo o agendamento? 📝</div>
+          </div>
+
           <div class="msg msg--user">Isso</div>
-          <div class="msg msg--bot">✅ Agendado!<br><br>👤 Pedro Almeida<br>💈 Corte<br>📅 Amanhã às 15h30<br>💰 R$ 50<br><br>Até lá! 😊</div>
+
+          <div class="msg-wrap bot">
+            <div class="msg-arrow arrow-left">↘</div>
+            <div class="annotation">
+              <strong>Cria evento estruturado</strong>
+              <span>Salva no Google Calendar e gera confirmação formatada</span>
+            </div>
+            <div class="msg msg--bot">✅ Agendado!<br><br>👤 Pedro Almeida<br>💈 Corte<br>📅 Amanhã às 15h30<br>💰 R$ 50<br><br>Até lá! 😊</div>
+          </div>
         </div>
       </div>
 
