@@ -295,10 +295,11 @@
         Como funciona na prática
       </div>
       <h2>Cliente manda mensagem. Bot responde em segundos.</h2>
-      <p>Conversa real entre cliente e agente de IA no WhatsApp.</p>
+      <p>Cada resposta do bot vem de algum lugar. Olha ao lado o que tá acontecendo por trás.</p>
     </div>
 
-    <div class="chat-wrap">
+    <div class="demo-grid">
+      <!-- Chat à esquerda -->
       <div class="chat-mock">
         <div class="chat-mock__header">
           <div class="chat-avatar">B</div>
@@ -310,54 +311,55 @@
         </div>
 
         <div class="chat-body">
-          <div class="msg msg--user">Oi, tem horário amanhã 14h?</div>
-
-          <div class="msg-wrap bot">
-            <div class="msg-arrow arrow-left">↘</div>
-            <div class="annotation">
-              <strong>Consulta dados em tempo real</strong>
-              <span>Busca horários disponíveis no Google Calendar</span>
-            </div>
-            <div class="msg msg--bot">Oi, Pedro! 👋 Tenho às 14h ou 15h30 com o Carlos. Qual prefere?</div>
-          </div>
-
-          <div class="msg msg--user">15h30 tá ótimo</div>
-
-          <div class="msg-wrap bot">
-            <div class="msg-arrow arrow-left">↘</div>
-            <div class="annotation">
-              <strong>Raciocínio contextual</strong>
-              <span>Entende "amanhã", "tá ótimo", adapta resposta</span>
-            </div>
-            <div class="msg msg--bot">Perfeito! Confirmo o agendamento? 📝</div>
-          </div>
-
-          <div class="msg msg--user">Isso</div>
-
-          <div class="msg-wrap bot">
-            <div class="msg-arrow arrow-left">↘</div>
-            <div class="annotation">
-              <strong>Cria evento estruturado</strong>
-              <span>Salva no Google Calendar e gera confirmação formatada</span>
-            </div>
-            <div class="msg msg--bot">✅ Agendado!<br><br>👤 Pedro Almeida<br>💈 Corte<br>📅 Amanhã às 15h30<br>💰 R$ 50<br><br>Até lá! 😊</div>
-          </div>
+          <div class="msg msg--user" data-annotation="1">Oi, tem horário amanhã 14h?</div>
+          <div class="msg msg--bot" data-annotation="2">Oi, Pedro! 👋 Tenho às 14h ou 15h30 com o Carlos. Qual prefere?</div>
+          <div class="msg msg--user" data-annotation="3">15h30 tá ótimo</div>
+          <div class="msg msg--bot" data-annotation="4">Perfeito! Confirmo o agendamento? 📝</div>
+          <div class="msg msg--user" data-annotation="5">Isso</div>
+          <div class="msg msg--bot" data-annotation="6">✅ Agendado!<br><br>👤 Pedro Almeida<br>💈 Corte<br>📅 Amanhã às 15h30<br>💰 R$ 50<br><br>Até lá! 😊</div>
         </div>
       </div>
 
-      <div class="chat-stats">
-        <div class="stat">
-          <div class="stat-num">47s</div>
-          <div class="stat-label">tempo total</div>
+      <!-- Annotations à direita -->
+      <div class="annotations-panel">
+        <div class="annotation-card" data-target="2">
+          <div class="annotation-num">1</div>
+          <div class="annotation-content">
+            <strong>Consulta em tempo real</strong>
+            <p>O bot busca os horários vagos no seu Google Calendar. Não é resposta fixa, é consulta ao vivo.</p>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat-num">0</div>
-          <div class="stat-label">mensagens tu viu</div>
+
+        <div class="annotation-card" data-target="4">
+          <div class="annotation-num">2</div>
+          <div class="annotation-content">
+            <strong>Entende contexto</strong>
+            <p>Percebe que "amanhã" é o dia seguinte, que "tá ótimo" confirma o último horário oferecido, e responde de forma natural.</p>
+          </div>
         </div>
-        <div class="stat">
-          <div class="stat-num">R$ 50</div>
-          <div class="stat-label">agendado</div>
+
+        <div class="annotation-card" data-target="6">
+          <div class="annotation-num">3</div>
+          <div class="annotation-content">
+            <strong>Cria evento de verdade</strong>
+            <p>Salva no Google Calendar com nome do cliente, serviço, valor. Manda a confirmação que você vê.</p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="chat-stats">
+      <div class="stat">
+        <div class="stat-num">47s</div>
+        <div class="stat-label">tempo total</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">mensagens tu viu</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">R$ 50</div>
+        <div class="stat-label">agendado</div>
       </div>
     </div>
   </div>

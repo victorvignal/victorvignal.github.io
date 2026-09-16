@@ -1229,10 +1229,7 @@ img.brand__mark[src$=".png"] {
 /* ========== DEMO (CHAT MOCKUP) ========== */
 .section--demo { background: var(--surface-2); }
 
-.chat-wrap {
-  max-width: 720px;
-  margin: 0 auto;
-}
+/* chat-wrap removido, agora usa .chat-mock direto */
 
 .chat-mock {
   background: var(--surface);
@@ -1543,80 +1540,146 @@ img.brand__mark[src$=".png"] {
 }
 
 
-/* ========== CHAT ANNOTATIONS (setas explicativas) ========== */
-.msg-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 100%;
+/* ========== DEMO - CHAT + ANNOTATIONS LADO A LADO ========== */
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
 }
 
-.msg-wrap.bot {
-  align-items: flex-start;
+@media (min-width: 900px) {
+  .demo-grid {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--sp-6);
+    align-items: start;
+  }
 }
 
-.msg-wrap.bot .annotation {
-  align-self: stretch;
-  margin: 4px 0 8px;
-  margin-left: 60px;
-  padding: 8px 12px;
-  background: var(--accent-soft);
-  border-left: 2px solid var(--accent);
-  border-radius: var(--r-sm);
-  font-size: 12px;
-  line-height: 1.4;
+/* msg com indicador lateral */
+.msg {
   position: relative;
 }
 
-[data-theme="dark"] .msg-wrap.bot .annotation {
-  background: rgba(37, 211, 102, 0.08);
-}
-
-.annotation strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-strong);
-  margin-bottom: 2px;
-}
-[data-theme="dark"] .annotation strong {
-  color: var(--accent);
-}
-
-.annotation span {
-  display: block;
-  color: var(--text-muted);
-  font-size: 11px;
-}
-
-.msg-arrow {
+.msg::before {
+  content: "";
   position: absolute;
-  font-size: 24px;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 0;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* msgs destacadas (controladas por hover/scroll se quiser depois) */
+.msg--bot[data-annotation] {
+  cursor: default;
+}
+
+/* painel de annotations */
+.annotations-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  position: relative;
+}
+
+.annotation-card {
+  display: flex;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.annotation-card:hover {
+  border-color: var(--accent);
+  transform: translateX(-2px);
+}
+
+[data-theme="dark"] .annotation-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+[data-theme="dark"] .annotation-card:hover {
+  background: var(--surface-2);
+}
+
+/* linha conectora (setinha) entre o card e o chat - à esquerda do card */
+.annotation-card::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 100%);
+  opacity: 0.6;
+}
+
+.annotation-card::after {
+  content: "←";
+  position: absolute;
+  left: -36px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
   color: var(--accent);
   font-weight: 700;
-  pointer-events: none;
-  z-index: 2;
+  opacity: 0.8;
 }
 
-/* setas pra baixo apontando pro msg do bot (esquerda) */
-.arrow-left {
-  left: -32px;
-  top: 0;
-  transform: translateY(50%);
-  font-size: 28px;
-  color: var(--accent);
-}
-
-@media (max-width: 640px) {
-  /* mobile: muda layout pra vertical */
-  .msg-wrap.bot .annotation {
-    margin-left: 0;
-    margin-top: 6px;
-    margin-bottom: 8px;
-  }
-  .arrow-left {
+@media (max-width: 899px) {
+  .annotation-card::before,
+  .annotation-card::after {
     display: none;
   }
+}
+
+.annotation-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+[data-theme="dark"] .annotation-num {
+  color: var(--on-primary);
+}
+
+.annotation-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.annotation-content strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.annotation-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 
