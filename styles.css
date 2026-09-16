@@ -1748,3 +1748,13 @@ img.brand__mark[src$=".png"] {
 [data-theme="dark"] .integrations-cta strong {
   color: var(--accent);
 }
+
+
+/* ========== DARK MODE - GRADIENT DO "WHATSAPP" MAIS CLARO ========== */
+[data-theme="dark"] .hero__title em {
+  background: linear-gradient(120deg, #60a5fa 0%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-right: 0.05em;
+}
