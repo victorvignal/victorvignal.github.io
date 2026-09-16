@@ -1612,29 +1612,36 @@ img.brand__mark[src$=".png"] {
   background: var(--surface-2);
 }
 
-/* linha conectora (setinha) entre o card e o chat - à esquerda do card */
+/* seta conectora entre o card e o chat */
+.annotation-card::after {
+  content: "→";
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--accent);
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+/* linha conectora sutil saindo do card */
 .annotation-card::before {
   content: "";
   position: absolute;
-  left: -24px;
+  left: -16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
+  width: 14px;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--accent) 100%);
-  opacity: 0.6;
-}
-
-.annotation-card::after {
-  content: "←";
-  position: absolute;
-  left: -36px;
-  top: 65%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: var(--accent);
-  font-weight: 700;
-  opacity: 0.8;
+  background: var(--accent);
 }
 
 @media (max-width: 899px) {
