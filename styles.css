@@ -1613,37 +1613,7 @@ img.brand__mark[src$=".png"] {
   background: var(--surface-2);
 }
 
-/* seta conectora entre o card e o chat */
-.annotation-card::after {
-  content: "→";
-  position: absolute;
-  left: -28px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: var(--accent);
-  font-weight: 700;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface);
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-}
-
-/* linha conectora sutil saindo do card */
-.annotation-card::before {
-  content: "";
-  position: absolute;
-  left: -16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 14px;
-  height: 2px;
-  background: var(--accent);
-}
+/* setas removidas */
 
 @media (max-width: 899px) {
   .annotation-card::before,
@@ -1799,4 +1769,198 @@ img.brand__mark[src$=".png"] {
   background-clip: text;
   color: transparent;
   padding-right: 0.05em;
+}
+
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+
+/* tipografia fluida (clamp permite escalar entre min e max) */
+html {
+  font-size: clamp(15px, 4vw, 16px);
+}
+
+@media (max-width: 640px) {
+  /* reduz paddings das seções no mobile */
+  .section {
+    padding: 56px 0 !important;
+  }
+
+  /* hero mais compacto */
+  .hero {
+    padding: 48px 0 32px !important;
+  }
+
+  .hero__title {
+    font-size: clamp(1.9rem, 9vw, 2.4rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.03em !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero__sub {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero__cta-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero__cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__meta {
+    flex-wrap: wrap;
+    gap: 16px 24px !important;
+    padding-top: 20px !important;
+  }
+
+  .hero__meta-item strong {
+    font-size: 22px !important;
+  }
+
+  .hero__meta-item span {
+    font-size: 12px !important;
+  }
+
+  /* títulos de seção menores no mobile */
+  .section__head h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem) !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .section__head p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 32px !important;
+  }
+
+  .kicker,
+  .eyebrow {
+    font-size: 11px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* container com padding menor */
+  .container {
+    padding: 0 20px !important;
+  }
+
+  /* cards mais compactos */
+  .case-card,
+  .integration-card,
+  .annotation-card {
+    padding: 16px !important;
+  }
+
+  .case-card h3,
+  .integration-card h3,
+  .annotation-content strong {
+    font-size: 15px !important;
+  }
+
+  .case-card p,
+  .integration-card p,
+  .annotation-content p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* demo: chat mais compacto no mobile */
+  .chat-mock {
+    font-size: 13px !important;
+  }
+
+  .msg {
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+    max-width: 85% !important;
+  }
+
+  .chat-mock__header {
+    padding: 12px !important;
+  }
+
+  .chat-name {
+    font-size: 14px !important;
+  }
+
+  /* cases: 1 coluna no mobile */
+  .cases-grid,
+  .integrations-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* botão CTA principal sempre full-width */
+  .btn--lg {
+    width: 100%;
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+    justify-content: center;
+  }
+
+  /* stats embaixo do demo - 3 colunas mais compactas */
+  .chat-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 24px !important;
+  }
+
+  .stat {
+    padding: 12px 8px !important;
+  }
+
+  .stat-num {
+    font-size: 20px !important;
+  }
+
+  .stat-label {
+    font-size: 11px !important;
+  }
+
+  /* FAQ items mais compactos */
+  .faq-item summary {
+    padding: 16px !important;
+    font-size: 14px !important;
+  }
+
+  .faq-item .faq-answer {
+    padding: 0 16px 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* CTAs no footer */
+  .cta-final__row {
+    flex-direction: column;
+  }
+
+  .cta-final__row .btn {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 12px;
+  }
+
+  /* nav mais clean */
+  .nav__inner {
+    padding: 12px 0 !important;
+  }
+
+  /* reduzir espaçamento entre seções */
+  section + section {
+    margin-top: 0;
+  }
+}
+
+/* mobile landscape - ajustes finos */
+@media (max-width: 640px) and (orientation: landscape) {
+  .hero {
+    padding: 32px 0 !important;
+  }
 }
