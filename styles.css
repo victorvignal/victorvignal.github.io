@@ -1408,3 +1408,60 @@ img.brand__mark[src$=".png"] {
   margin-bottom: var(--sp-4);
   color: var(--text);
 }
+
+
+/* ========== DARK MODE OVERRIDES (process grid, demo, cases) ========== */
+[data-theme="dark"] .process-step {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+[data-theme="dark"] .process-step .step-title {
+  color: var(--text);
+}
+[data-theme="dark"] .process-step .step-desc {
+  color: var(--text-muted);
+}
+[data-theme="dark"] .process-step .step-num {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+[data-theme="dark"] .step-arrow {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .chat-mock {
+  background: var(--surface);
+  border-color: var(--border);
+}
+[data-theme="dark"] .chat-body {
+  background: var(--surface-3);
+}
+[data-theme="dark"] .msg--bot {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border);
+}
+[data-theme="dark"] .stat {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .case-card {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+[data-theme="dark"] .case-card h3 {
+  color: var(--text);
+}
+[data-theme="dark"] .case-result {
+  background: var(--surface);
+}
+[data-theme="dark"] .cases-cta {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+/* ========== HERO OVERRIDES (garantir visibilidade no dark) ========== */
+[data-theme="dark"] .hero__bg {
+  background: linear-gradient(180deg, rgba(25, 211, 102, 0.04) 0%, transparent 70%);
+}
