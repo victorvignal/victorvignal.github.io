@@ -428,12 +428,13 @@ img.brand__mark[src$=".png"] {
 .hero__title-emph {
   display: inline-block;
   position: relative;
-  color: var(--text);
-  /* usa --text que já muda automaticamente no dark mode */
+  color: var(--accent-strong);
+  /* usa --accent-strong (verde WhatsApp) que tem boa visibilidade nos 2 modos */
+  font-weight: 800;
 }
 
 [data-theme="dark"] .hero__title-emph {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .hero__sub {
