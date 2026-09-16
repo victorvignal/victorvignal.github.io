@@ -1465,3 +1465,49 @@ img.brand__mark[src$=".png"] {
 [data-theme="dark"] .hero__bg {
   background: linear-gradient(180deg, rgba(25, 211, 102, 0.04) 0%, transparent 70%);
 }
+
+
+/* ========== DEMO - melhorias visuais ========== */
+.chat-mock {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.msg--user::before {
+  content: "CLIENTE";
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+[data-theme="dark"] .msg--user::before {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.msg--bot::before {
+  content: "BARBEARIA";
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+[data-theme="dark"] .msg--bot::before {
+  color: var(--accent);
+}
+
+.chat-mock__header {
+  position: relative;
+}
+.chat-mock__header::after {
+  content: "WhatsApp Business";
+  position: absolute;
+  right: 16px;
+  bottom: 4px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
