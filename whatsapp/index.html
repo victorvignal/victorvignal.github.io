@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klix Soluções | WhatsApp com IA em 48h</title>
+  <meta name="description" content="Automação com IA no WhatsApp. Resposta instantânea, qualificação automática de leads e alerta de lead quente pra clínicas, estética e serviços." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:title" content="Klix Soluções · WhatsApp com IA em 48h" />
+  <meta property="og:description" content="Resposta, qualificação e alerta no seu número, sem trocar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cover.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="Klix Soluções">
+      <img class="brand__mark" src="assets/logo-mark.png" alt="Klix Soluções" width="68" height="36" />
+      <div class="brand__text">
+        <strong>Klix Soluções</strong>
+        <span>WhatsApp com IA · 48h</span>
+      </div>
+    </a>
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#planos">Plano</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a id="cta-top" class="btn btn--primary" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+        Falar comigo
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <div class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          Atendimento com IA no WhatsApp
+        </div>
+        <h1 class="hero__title">
+          Pare de perder cliente<br>
+          no seu <em class="brand-highlight">WhatsApp</em><br>
+          <span class="hero__title-emph">Instalação rápida e fácil.</span>
+        </h1>
+        <p class="hero__sub">
+          Automação com IA que responde, qualifica leads e avisa quando o cliente está pronto para fechar. <strong>No seu número, sem trocar.</strong>
+        </p>
+        <div class="hero__cta-row">
+          <a id="cta-hero" class="btn btn--primary btn--lg" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+            Falar comigo no Instagram
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#como-funciona">
+            Ver como funciona
+          </a>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <strong>0</strong>
+            <span>troca de número</span>
+          </div>
+          <div class="hero__meta-item">
+            <strong>24/7</strong>
+            <span>atende sempre</span>
+          </div>
+          <div class="hero__meta-item">
+            <strong>100%</strong>
+            <span>adaptável</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <section class="trustbar">
+    <div class="container">
+      <p class="trustbar__text">Pensado pra quem atende por WhatsApp:</p>
+      <ul class="trustbar__list">
+        <li>Clínicas</li>
+        <li>Estética</li>
+        <li>Serviços</li>
+        <li>Educação</li>
+        <li>Alimentação</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PROBLEMA ========== -->
+  <section class="section section--problem">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">O problema</span>
+        <h2>Você está <em>perdendo venda</em> sem perceber.</h2>
+        <p>Quase todo lead chega pelo WhatsApp. Se ninguém responde em 5 minutos, ele desiste e vai pro seu concorrente.</p>
+      </div>
+      <div class="stats">
+        <article class="stat">
+          <strong>5min</strong>
+          <p>é o tempo máximo que um lead quente espera por resposta</p>
+        </article>
+        <article class="stat">
+          <strong>62%</strong>
+          <p>das mensagens comerciais ficam sem resposta no WhatsApp</p>
+        </article>
+        <article class="stat">
+          <strong>3x</strong>
+          <p>aumenta a conversão quando o atendimento é instantâneo</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOLUÇÃO ========== -->
+  <section class="section section--solution" id="como-funciona">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Como funciona</span>
+        <h2>Três camadas de automação,<br>zero robô engessado.</h2>
+        <p>Não disparo de respostas fixas. A IA consulta a base da sua empresa, interpreta a intenção e conduz a conversa como um humano faria.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card__num">01</div>
+          <h3>Resposta instantânea</h3>
+          <p>Atende em segundos, 24/7, sem fila. Sai da resposta automática genérica do WhatsApp Business e vai pra uma IA que conhece o seu negócio.</p>
+          <div class="card__tag">~8s resposta média</div>
+        </article>
+        <article class="card">
+          <div class="card__num">02</div>
+          <h3>Qualificação automática</h3>
+          <p>Coleta nome, procedimento de interesse, urgência e orçamento. Separa curioso de comprador com perguntas naturais, sem interrogatório.</p>
+          <div class="card__tag">5 campos por lead</div>
+        </article>
+        <article class="card">
+          <div class="card__num">03</div>
+          <h3>Alerta de lead quente</h3>
+          <p>Quando aparece oportunidade real, você recebe aviso no WhatsApp/Telegram e entra na hora. Bot só conduz o que dá pra automatizar.</p>
+          <div class="card__tag">handoff inteligente</div>
+        </article>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Cliente manda mensagem</div>
+            <div class="step-desc">"Oi, tem horário amanhã 14h?" Direto no seu WhatsApp Business, no seu número.</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Bot atende em 5s</div>
+            <div class="step-desc">Responde com informação real (horários, serviços, preços). Tom humano, sem parecer robô.</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Qualifica o lead</div>
+            <div class="step-desc">Identifica o que o cliente quer. Marca horário automaticamente no Google Calendar.</div>
+          </div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Avisa você só se precisar</div>
+            <div class="step-desc">Bot resolve 80% sozinho. Te chama no WhatsApp só quando cliente quer fechar ou tem dúvida complexa.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DIFERENCIAL ========== -->
+  <section class="section section--diff">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">O diferencial</span>
+        <h2>Não é robô automático.<br>É IA com contexto da sua empresa.</h2>
+      </div>
+      <div class="diff-grid">
+        <article>
+          <h3>Base de conhecimento (RAG)</h3>
+          <p>Antes de responder, a IA consulta seus serviços, preços, políticas e tom de voz. Ela fala como se fosse alguém do seu time.</p>
+        </article>
+        <article>
+          <h3>Raciocínio guiado</h3>
+          <p>Não só busca texto. Interpreta a intenção do lead, faz perguntas úteis e conduz a conversa pro próximo passo.</p>
+        </article>
+        <article>
+          <h3>Escala com segurança</h3>
+          <p>Responde com naturalidade, mas com limites claros. Quando precisa, encaminha pro humano sem perder o histórico.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PLANO ========== -->
+  <section class="section section--plan" id="planos">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Plano de entrada</span>
+        <h2>Start: pra você testar<br>sem arriscar.</h2>
+        <p>Pacote enxuto, com tudo que precisa pra começar a capturar lead em 48h. Sem fidelidade, sem complicação.</p>
+      </div>
+      <div class="plan">
+        <div class="plan__price">
+          <div class="plan__price-item">
+            <div class="plan__price-label">Implantação</div>
+            <div class="plan__price-meta" style="font-size:14px;color:#86868d;">Valor sob consulta</div>
+          </div>
+          <div class="plan__price-item">
+            <div class="plan__price-label">Mensalidade</div>
+            
+          </div>
+        </div>
+        <div class="plan__features">
+          <h3>O que está incluso</h3>
+          <ul>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              IA treinada na base da sua empresa (RAG padrão)
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Resposta instantânea 24/7 no seu número
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Qualificação automática de leads (nome, interesse, urgência, orçamento)
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Alerta de lead quente via WhatsApp/Telegram
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Handoff pro humano com histórico preservado
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Integração com planilha pra organização dos atendimentos
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              48h de setup, do zero até o primeiro lead qualificado
+            </li>
+          </ul>
+          <a id="cta-offer" class="btn btn--accent btn--lg plan__cta" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+            Falar comigo
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <p class="plan__fine">Setup inicial em 48h úteis. Sem fidelidade, cancela quando quiser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- ========== DEMO ========== -->
+<section class="section section--demo" id="demo">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Como funciona na prática
+      </div>
+      <h2>Cliente manda mensagem. Bot responde em segundos.</h2>
+      <p>Cada resposta do bot vem de algum lugar. Olha ao lado o que tá acontecendo por trás.</p>
+    </div>
+
+    <div class="demo-grid">
+      <!-- Chat à esquerda -->
+      <div class="chat-mock">
+        <div class="chat-mock__header">
+          <div class="chat-avatar">B</div>
+          <div class="chat-meta">
+            <div class="chat-name">Barbearia do Carlos</div>
+            <div class="chat-status">● online agora</div>
+          </div>
+          <div class="chat-time">14:23</div>
+        </div>
+
+        <div class="chat-body">
+          <div class="msg msg--user" data-annotation="1">Oi, tem horário amanhã 14h?</div>
+          <div class="msg msg--bot" data-annotation="2">Oi, Pedro! 👋 Tenho às 14h ou 15h30 com o Carlos. Qual prefere?</div>
+          <div class="msg msg--user" data-annotation="3">15h30 tá ótimo</div>
+          <div class="msg msg--bot" data-annotation="4">Perfeito! Confirmo o agendamento? 📝</div>
+          <div class="msg msg--user" data-annotation="5">Isso</div>
+          <div class="msg msg--bot" data-annotation="6">✅ Agendado!<br><br>👤 Pedro Almeida<br>💈 Corte<br>📅 Amanhã às 15h30<br>💰 R$ 50<br><br>Até lá! 😊</div>
+        </div>
+      </div>
+
+      <!-- Annotations à direita -->
+      <div class="annotations-panel">
+        <div class="annotation-card" data-target="2">
+          <div class="annotation-num">1</div>
+          <div class="annotation-content">
+            <strong>Consulta em tempo real</strong>
+            <p>O bot busca os horários vagos no seu Google Calendar. Não é resposta fixa, é consulta ao vivo.</p>
+          </div>
+        </div>
+
+        <div class="annotation-card" data-target="4">
+          <div class="annotation-num">2</div>
+          <div class="annotation-content">
+            <strong>Entende contexto</strong>
+            <p>Percebe que "amanhã" é o dia seguinte, que "tá ótimo" confirma o último horário oferecido, e responde de forma natural.</p>
+          </div>
+        </div>
+
+        <div class="annotation-card" data-target="6">
+          <div class="annotation-num">3</div>
+          <div class="annotation-content">
+            <strong>Cria evento de verdade</strong>
+            <p>Salva no Google Calendar com nome do cliente, serviço, valor. Manda a confirmação que você vê.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-stats">
+      <div class="stat">
+        <div class="stat-num">47s</div>
+        <div class="stat-label">tempo total</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">mensagens tu viu</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">R$ 50</div>
+        <div class="stat-label">agendado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASES ========== -->
+<section class="section section--cases" id="cases">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Cases de demonstração
+      </div>
+      <h2>Como funciona em 3 nichos diferentes</h2>
+      <p>Adapto o agente pro seu negócio. Você vê como responde antes de começar.</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-tag">Barbearia</div>
+        <h3>Atende 40 clientes/dia</h3>
+        <p>"Oi, tem horário amanhã 14h?" → bot responde em 5s com horários disponíveis, marca no Google Calendar e confirma.</p>
+        <div class="case-result">
+          <strong>+18%</strong> agendamentos fora do horário comercial
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-tag">Clínica odontológica</div>
+        <h3>Agenda particular</h3>
+        <p>"Quanto custa a limpeza?" → bot informa valores, agenda avaliação e responde sobre convênios.</p>
+        <div class="case-result">
+          <strong>+12</strong> novos pacientes/mês
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-tag">Restaurante</div>
+        <h3>Reservas automatizadas</h3>
+        <p>"Tem mesa pra 4 hoje 20h?" → bot verifica disponibilidade, confirma reserva e manda endereço.</p>
+        <div class="case-result">
+          <strong>-25%</strong> no-shows
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-cta">
+      <p>Quer ver o bot no <strong>seu</strong> negócio antes de decidir?</p>
+      <a class="btn btn--primary btn--lg" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+        Pedir demo no Instagram
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== INTEGRAÇÕES ========== -->
+<section class="section section--integrations" id="integracoes">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Se adapta ao que você já usa
+      </div>
+      <h2>O agente se adapta ao seu sistema. Não o contrário.</h2>
+      <p>Você não precisa trocar de plataforma, migrar base de clientes ou aprender ferramenta nova. O agente conversa com o que você já tem.</p>
+    </div>
+
+    <div class="integrations-grid">
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        <h3>Google Calendar</h3>
+        <p>Agenda direto no calendário que você já abre todo dia.</p>
+      </div>
+
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/>
+        </svg>
+        <h3>Notion e Airtable</h3>
+        <p>Lê direto da base onde você guarda clientes e procedimentos.</p>
+      </div>
+
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <h3>WhatsApp Business</h3>
+        <p>Usa o número que você já tem. Cliente não percebe diferença.</p>
+      </div>
+
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        </svg>
+        <h3>Sistemas de gestão</h3>
+        <p>Doctoralia, iClinic, Clinicorp, HubSpot, RD Station. O que tiver API, conecta.</p>
+      </div>
+
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3>Planilhas Google</h3>
+        <p>Lê e atualiza direto. Lista de espera, controle, base de clientes.</p>
+      </div>
+
+      <div class="integration-card">
+        <svg class="integration-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <h3>Tem sistema interno?</h3>
+        <p>Software próprio, banco de dados, planilha complexa. A gente conversa.</p>
+      </div>
+    </div>
+
+    <div class="integrations-cta">
+      <p>Não viu seu sistema aqui? Provavelmente dá pra integrar.</p>
+      <a class="btn btn--primary btn--lg" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+        Falar comigo no Instagram
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+  <section class="section section--faq" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">FAQ</span>
+        <h2>Perguntas rápidas</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Preciso trocar meu número?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Não. Mantemos seu número atual do WhatsApp e configuramos a automação direto no fluxo de atendimento. Zero troca, zero prejuízo pros clientes que já têm seu número salvo.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Em quanto tempo fica pronto?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Com onboarding completo, o básico fica ativo em até 48h úteis. Ajustes finos e integrações adicionais geralmente pedem mais uns dias.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Funciona pra qualquer negócio?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Foco principal em negócios locais que dependem de WhatsApp: estética, clínicas, serviços, alimentação, educação. Outros modelos funcionam, mas pedem adaptação.</div>
+        </details>
+        <details class="faq-item">
+          <summary>E se o cliente quiser falar com humano?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">A qualquer momento o atendente humano é notificado e entra na conversa. O bot só conduz o que dá pra automatizar sem perder qualidade.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o RAG?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer">Antes de responder, a IA consulta a base de conhecimento da sua empresa: serviços, preços, políticas, tom de voz. Ela fala como alguém do seu time, não como um chatbot genérico.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-final__box">
+        <div class="kicker kicker--light">Próximo passo</div>
+        <h2>Quer ativar hoje?</h2>
+        <p>Me chama no WhatsApp. Em uma mensagem eu te mando onboarding + escopo do pacote Start.</p>
+        <div class="cta-final__row">
+          <a id="cta-bottom" class="btn btn--primary btn--lg" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+            Falar no Instagram
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+            Tirar uma dúvida
+          </a>
+        </div>
+        <p class="cta-final__ig">Instagram: <strong>@klixsolucoesia</strong></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__row">
+      <a href="#top" class="footer__brand" aria-label="Klix Soluções">
+        <img src="assets/logo-mark.png" alt="" width="48" height="24" aria-hidden="true" />
+        <span>Klix Soluções</span>
+      </a>
+      <div class="footer__meta">
+        <span>Rio de Janeiro</span>
+        <span aria-hidden="true">·</span>
+        <span>© <span id="year"></span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
