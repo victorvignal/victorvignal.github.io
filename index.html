@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Klix Soluções | IA que se adapta ao seu negócio</title>
-  <meta name="description" content="Soluções com IA que se adaptam ao seu negócio. Agentes de WhatsApp, automação de fluxos e análise de documentos. Instalação rápida, sem trocar de sistema." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Soluções com IA que se adaptam ao seu negócio. Agentes de WhatsApp, automação de fluxos e análise de documentos. Sem trocar de sistema." />
+  <meta name="theme-color" content="#060913" />
   <meta property="og:title" content="Klix Soluções · IA que se adapta ao seu negócio" />
   <meta property="og:description" content="Agentes de WhatsApp, automação de fluxos e análise de documentos. Sem trocar de sistema." />
   <meta property="og:type" content="website" />
@@ -14,36 +14,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
   <style>
-    /* ===== tokens (herdados do estilo Klix: monocromático + verde) ===== */
+    /* ===== tema: IA neutra e sofisticada =====
+       dark azulado profundo + violeta/ciano (diferente do verde WhatsApp do subsite) */
     :root {
-      --bg: #0a0a0a;
-      --bg-raised: #131313;
-      --bg-card: #161616;
-      --border: #262626;
-      --text: #f5f5f5;
-      --text-dim: #a3a3a3;
-      --text-faint: #6b6b6b;
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.12);
-      --accent-glow: rgba(34, 197, 94, 0.35);
-      --radius: 14px;
-    }
-
-    [data-theme="light"] {
-      --bg: #fafafa;
-      --bg-raised: #ffffff;
-      --bg-card: #ffffff;
-      --border: #e5e5e5;
-      --text: #171717;
-      --text-dim: #525252;
-      --text-faint: #a3a3a3;
-      --accent: #16a34a;
-      --accent-soft: rgba(22, 163, 74, 0.1);
-      --accent-glow: rgba(22, 163, 74, 0.3);
+      --bg: #060913;
+      --bg-raised: #0b1020;
+      --bg-card: #0d1224;
+      --border: #1c2440;
+      --text: #eef1fa;
+      --text-dim: #9aa3c0;
+      --text-faint: #5d6785;
+      --accent: #8b7cf6;      /* violeta */
+      --accent-2: #38bdf8;    /* ciano */
+      --accent-soft: rgba(139, 124, 246, 0.1);
+      --accent-glow: rgba(139, 124, 246, 0.35);
+      --radius: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -52,193 +40,187 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
     /* ===== nav ===== */
     .nav {
       position: sticky; top: 0; z-index: 50;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: blur(12px);
+      background: rgba(6, 9, 19, 0.8);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav__inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none; color: var(--text);
-    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--text); }
     .brand__mark {
-      width: 34px; height: 34px; border-radius: 9px;
-      background: var(--accent-soft);
+      width: 36px; height: 36px; border-radius: 11px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       display: grid; place-items: center;
-      color: var(--accent);
-      font-weight: 800; font-size: 15px;
-      border: 1px solid var(--accent-glow);
+      color: #060913; font-weight: 800; font-size: 16px;
     }
-    .brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
-    .brand span { display: block; font-size: 11px; color: var(--text-faint); font-weight: 500; }
-
-    .theme-toggle {
-      background: none; border: 1px solid var(--border);
-      border-radius: 10px; width: 38px; height: 38px;
-      cursor: pointer; color: var(--text-dim);
-      display: grid; place-items: center;
+    .brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; display: block; }
+    .brand span { display: block; font-size: 11px; color: var(--text-faint); }
+    .nav__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 11px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      color: var(--text); border: 1px solid var(--border);
+      background: var(--bg-card);
       transition: border-color .2s, color .2s;
     }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .nav__cta:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ===== hero ===== */
-    .hero { position: relative; padding: 96px 0 72px; overflow: hidden; }
+    /* ===== hero editorial ===== */
+    .hero { padding: 140px 0 110px; position: relative; }
     .hero::before {
-      content: ""; position: absolute; inset: 0;
+      content: ""; position: absolute; inset: 0; pointer-events: none;
       background:
-        radial-gradient(600px 300px at 50% -10%, var(--accent-soft), transparent 70%);
-      pointer-events: none;
+        radial-gradient(700px 400px at 75% 10%, rgba(139,124,246,0.13), transparent 65%),
+        radial-gradient(500px 350px at 20% 30%, rgba(56,189,248,0.08), transparent 65%);
     }
-    .hero__inner { position: relative; text-align: center; max-width: 720px; margin: 0 auto; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 600; color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-glow);
-      border-radius: 999px; padding: 6px 14px;
-      margin-bottom: 24px;
-    }
-    .eyebrow__dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent-glow);
+    .hero__inner { position: relative; }
+    .hero__tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px; color: var(--text-faint);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
-      font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+      font-size: clamp(2.4rem, 6.5vw, 4.2rem);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.06;
+      max-width: 700px;
     }
     .hero h1 em {
       font-style: normal;
-      background: linear-gradient(120deg, var(--accent), #4ade80);
+      background: linear-gradient(110deg, var(--accent) 20%, var(--accent-2) 80%);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .hero__sub {
-      margin: 20px auto 0; max-width: 560px;
-      color: var(--text-dim); font-size: 1.08rem;
+      margin-top: 26px; font-size: 1.15rem; color: var(--text-dim);
+      max-width: 480px;
     }
-    .hero__sub strong { color: var(--text); }
-    .hero__cta-row {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-      margin-top: 32px;
-    }
-
-    /* ===== buttons ===== */
-    .btn {
+    .hero__links { margin-top: 40px; display: flex; gap: 28px; flex-wrap: wrap; }
+    .hero__links a {
+      color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px;
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; border-radius: 12px;
-      font-weight: 600; font-size: 15px; text-decoration: none;
-      transition: transform .15s, box-shadow .15s, border-color .2s;
-      border: 1px solid transparent; cursor: pointer;
+      border-bottom: 1px solid var(--border); padding-bottom: 4px;
+      transition: border-color .2s, color .2s;
     }
-    .btn--primary {
-      background: var(--accent); color: #052e16;
-    }
-    .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
-    .btn--ghost {
-      border-color: var(--border); color: var(--text);
-      background: var(--bg-card);
-    }
-    .btn--ghost:hover { border-color: var(--accent); }
+    .hero__links a:hover { border-color: var(--accent); color: var(--accent); }
+    .hero__links a span { color: var(--accent); }
 
-    /* ===== sections ===== */
-    .section { padding: 72px 0; }
-    .section__head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
-    .kicker {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent);
+    /* ===== manifesto ===== */
+    .manifesto { padding: 90px 0; border-top: 1px solid var(--border); }
+    .manifesto p {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 600; letter-spacing: -0.02em; line-height: 1.35;
+      max-width: 720px;
+      color: var(--text-dim);
     }
-    .section__head h2 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 800; letter-spacing: -0.02em;
-      margin: 10px 0 12px;
-    }
-    .section__head h2 em {
+    .manifesto p strong { color: var(--text); }
+    .manifesto p em {
       font-style: normal; color: var(--accent);
     }
-    .section__head p { color: var(--text-dim); }
 
-    /* ===== services ===== */
-    .services { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .service {
-      display: flex; flex-direction: column; gap: 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      transition: border-color .2s, transform .2s;
+    /* ===== capacidades ===== */
+    .capacidades { padding: 90px 0; border-top: 1px solid var(--border); }
+    .cap__head { margin-bottom: 48px; }
+    .cap__head h2 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 800; letter-spacing: -0.025em;
+    }
+    .cap__grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .cap {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
       text-decoration: none; color: var(--text);
+      transition: padding .25s;
     }
-    .service:hover { border-color: var(--accent-glow); transform: translateY(-3px); }
-    .service__icon {
-      width: 44px; height: 44px; border-radius: 12px;
-      background: var(--accent-soft); border: 1px solid var(--accent-glow);
-      display: grid; place-items: center; font-size: 20px;
+    .cap:hover { padding-left: 14px; }
+    .cap__title {
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 700; letter-spacing: -0.02em;
+      display: flex; align-items: center; gap: 14px;
     }
-    .service h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
-    .service p { color: var(--text-dim); font-size: 0.95rem; }
-    .service__link {
-      color: var(--accent); font-weight: 600; font-size: 14px;
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-    .service--soon { opacity: 0.55; }
-    .service--soon .service__badge {
-      font-size: 11px; font-weight: 600;
+    .cap__num {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--text-faint);
-      border: 1px dashed var(--border);
-      border-radius: 6px; padding: 2px 8px;
-      margin-left: 8px; vertical-align: middle;
+      font-size: 13px; color: var(--text-faint); font-weight: 400;
+    }
+    .cap__desc { color: var(--text-dim); font-size: 0.95rem; max-width: 380px; text-align: right; }
+    .cap__arrow { color: var(--text-faint); font-size: 1.3rem; transition: color .2s, transform .2s; }
+    .cap:hover .cap__arrow { color: var(--accent); transform: translateX(4px); }
+    .cap--soon { cursor: default; }
+    .cap--soon:hover { padding-left: 0; }
+    .cap--soon .cap__title { color: var(--text-faint); }
+    .cap__badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-faint);
+      border: 1px dashed var(--border); border-radius: 6px;
+      padding: 3px 9px; font-weight: 400;
     }
 
-    /* ===== why ===== */
-    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .why__item {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px;
+    /* ===== como trabalhamos ===== */
+    .como { padding: 90px 0; border-top: 1px solid var(--border); }
+    .como h2 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 800; letter-spacing: -0.025em; margin-bottom: 48px;
     }
-    .why__item strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
-    .why__item p { color: var(--text-dim); font-size: 0.9rem; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .step {
+      display: grid; grid-template-columns: 90px 1fr; gap: 24px;
+      padding: 28px 0; border-top: 1px solid var(--border);
+    }
+    .step__num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; color: var(--accent); padding-top: 6px;
+    }
+    .step strong { display: block; font-size: 1.08rem; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .step p { color: var(--text-dim); font-size: 0.95rem; max-width: 560px; }
 
-    /* ===== cta final ===== */
-    .cta-final {
-      text-align: center;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 56px 32px;
+    /* ===== cta conversa ===== */
+    .conversa { padding: 110px 0 90px; text-align: center; position: relative; }
+    .conversa::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(600px 300px at 50% 100%, rgba(139,124,246,0.1), transparent 70%);
     }
-    .cta-final h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
-    .cta-final p { color: var(--text-dim); margin: 12px auto 28px; max-width: 480px; }
+    .conversa h2 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 800; letter-spacing: -0.03em;
+      position: relative;
+    }
+    .conversa p {
+      color: var(--text-dim); margin: 16px auto 36px; max-width: 440px;
+      position: relative;
+    }
+    .conversa .btn {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 30px; border-radius: 13px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #060913; font-weight: 700; font-size: 15px;
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .conversa .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px var(--accent-glow); }
 
     /* ===== footer ===== */
-    .footer { border-top: 1px solid var(--border); padding: 32px 0; margin-top: 48px; }
-    .footer__row {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
-    .footer__brand { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; }
+    .footer { border-top: 1px solid var(--border); padding: 36px 0; }
+    .footer__row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
     .footer__meta { color: var(--text-faint); font-size: 13px; }
 
     /* ===== responsive ===== */
-    @media (min-width: 720px) {
-      .services { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: 760px) {
+      .cap__grid .cap { grid-template-columns: auto 1fr auto; }
     }
     @media (max-width: 720px) {
-      .why { grid-template-columns: 1fr; }
-      .hero { padding: 64px 0 48px; }
+      .hero { padding: 90px 0 70px; }
+      .cap { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .cap__desc { text-align: left; max-width: none; }
+      .step { grid-template-columns: 1fr; gap: 8px; }
     }
   </style>
 </head>
@@ -251,106 +233,106 @@
       <span class="brand__mark">K</span>
       <div>
         <strong>Klix Soluções</strong>
-        <span>IA que se adapta</span>
+        <span>IA sob medida</span>
       </div>
     </a>
-    <nav>
-      <a href="#servicos" style="color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500; margin-right: 20px;">Serviços</a>
-      <a href="#porque" style="color: var(--text-dim); text-decoration: none; font-size: 14px; font-weight: 500;">Por que</a>
-    </nav>
-    <a class="btn btn--primary" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener" style="padding: 9px 16px; font-size: 14px;">
-      Falar com a gente
+    <a class="nav__cta" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+      Conversar
     </a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- HERO EDITORIAL -->
   <section class="hero">
     <div class="container hero__inner">
-      <div class="eyebrow"><span class="eyebrow__dot"></span> Soluções com IA sob medida</div>
-      <h1>IA que se adapta<br>ao <em>seu negócio</em></h1>
+      <p class="hero__tag">Klix Soluções · Rio de Janeiro</p>
+      <h1>Seu negócio já tem o processo. A gente coloca <em>a IA</em> nele.</h1>
       <p class="hero__sub">
-        Não vendemos sistema pronto. Construímos a solução em cima do
-        <strong>fluxo que você já tem</strong>. Atendimento, automação e análise,
-        sem trocar de ferramenta.
+        Atendimento, automação e análise construídos em cima do que sua empresa
+        já usa. Sem trocar de sistema, sem refazer fluxo.
       </p>
-      <div class="hero__cta-row">
-        <a class="btn btn--primary" href="#servicos">Ver soluções</a>
-        <a class="btn btn--ghost" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">Falar no Instagram</a>
+      <div class="hero__links">
+        <a href="#capacidades"><span>↓</span> Ver capacidades</a>
+        <a href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener"><span>→</span> Instagram</a>
       </div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
+  <!-- MANIFESTO -->
+  <section class="manifesto">
     <div class="container">
-      <div class="section__head">
-        <span class="kicker">Soluções</span>
-        <h2>O que a IA resolve <em>no seu dia a dia</em></h2>
-        <p>Cada solução é montada em cima da operação do cliente. Comece por uma, expanda quando fizer sentido.</p>
-      </div>
+      <p>
+        Software pronto resolve o problema médio.
+        <strong>Problema real não é médio.</strong> Por isso toda solução Klix
+        nasce do <em>seu fluxo</em>, não de um template.
+      </p>
+    </div>
+  </section>
 
-      <div class="services">
-        <a class="service" href="/whatsapp/">
-          <div class="service__icon">💬</div>
-          <h3>Agente de WhatsApp</h3>
-          <p>Atendimento com IA no seu número atual. Responde em segundos, agenda, qualifica lead e avisa quando o cliente está pronto pra fechar. 24h por dia.</p>
-          <span class="service__link">Ver solução →</span>
+  <!-- CAPACIDADES -->
+  <section class="capacidades" id="capacidades">
+    <div class="container">
+      <div class="cap__head">
+        <h2>Onde a IA entra no seu dia a dia</h2>
+      </div>
+      <div class="cap__grid">
+        <a class="cap" href="/whatsapp/">
+          <span class="cap__title"><span class="cap__num">01</span> Agente de WhatsApp</span>
+          <span class="cap__desc">Atendimento e agendamento no seu número atual, 24h por dia.</span>
+          <span class="cap__arrow">→</span>
         </a>
-
-        <div class="service service--soon">
-          <div class="service__icon">⚙️</div>
-          <h3>Automação de Fluxos<span class="service__badge">em breve</span></h3>
-          <p>Rotinas repetitivas rodando sozinhas: planilhas, notificações, integração entre sistemas. O trabalho chato some da sua mesa.</p>
+        <div class="cap cap--soon">
+          <span class="cap__title"><span class="cap__num">02</span> Automação de Fluxos <span class="cap__badge">em breve</span></span>
+          <span class="cap__desc">Rotinas repetitivas rodando sozinhas entre os seus sistemas.</span>
         </div>
-
-        <div class="service service--soon">
-          <div class="service__icon">📄</div>
-          <h3>Análise de Documentos<span class="service__badge">em breve</span></h3>
-          <p>Contratos, notas, relatórios: a IA lê, extrai o que importa e organiza. Horas de leitura viram segundos de espera.</p>
+        <div class="cap cap--soon">
+          <span class="cap__title"><span class="cap__num">03</span> Análise de Documentos <span class="cap__badge">em breve</span></span>
+          <span class="cap__desc">Contratos e relatórios lidos e organizados em segundos.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- POR QUE -->
-  <section class="section" id="porque">
+  <!-- COMO TRABALHAMOS -->
+  <section class="como">
     <div class="container">
-      <div class="section__head">
-        <span class="kicker">Diferencial</span>
-        <h2>Feito <em>em cima</em> da sua operação</h2>
-        <p>A diferença entre software genérico e solução que funciona.</p>
-      </div>
-
-      <div class="why">
-        <div class="why__item">
-          <strong>🧩 Sem trocar de sistema</strong>
-          <p>A solução se encaixa no que você já usa. WhatsApp, planilha, agenda, CRM: nada muda de lugar.</p>
+      <h2>Como a gente trabalha</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step__num">/01</span>
+          <div>
+            <strong>Briefing do fluxo</strong>
+            <p>Uma conversa pra entender onde o processo trava hoje. Sem formulário gigante.</p>
+          </div>
         </div>
-        <div class="why__item">
-          <strong>⚡ Instalação rápida</strong>
-          <p>Briefing, setup e no ar em dias, não meses. Você vê funcionando antes de decidir expandir.</p>
+        <div class="step">
+          <span class="step__num">/02</span>
+          <div>
+            <strong>Montagem em cima do que existe</strong>
+            <p>A solução se encaixa no WhatsApp, planilha, agenda ou sistema que você já usa.</p>
+          </div>
         </div>
-        <div class="why__item">
-          <strong>🔄 Evolui com você</strong>
-          <p>Começa por uma dor. Quando fizer sentido, adiciona automação, análise, novos canais.</p>
+        <div class="step">
+          <span class="step__num">/03</span>
+          <div>
+            <strong>No ar em dias</strong>
+            <p>Você vê funcionando de verdade antes de decidir expandir pra outras frentes.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="section">
+  <!-- CTA CONVERSA -->
+  <section class="conversa">
     <div class="container">
-      <div class="cta-final">
-        <h2>Tem um processo que te consome tempo?</h2>
-        <p>Manda no Instagram. Em uma mensagem a gente entende o cenário e diz se IA resolve.</p>
-        <a class="btn btn--primary" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
-          Falar no Instagram
-        </a>
-      </div>
+      <h2>Tem um processo que te consome tempo?</h2>
+      <p>Manda uma mensagem. A gente entende o cenário e diz se IA resolve.</p>
+      <a class="btn" href="https://instagram.com/klixsolucoesia" target="_blank" rel="noopener">
+        Conversar no Instagram →
+      </a>
     </div>
   </section>
 
@@ -358,11 +340,11 @@
 
 <footer class="footer">
   <div class="container footer__row">
-    <a href="#top" class="footer__brand">
-      <span class="brand__mark" style="width:28px;height:28px;font-size:13px;">K</span>
+    <a href="#top" class="brand">
+      <span class="brand__mark" style="width:28px;height:28px;font-size:13px;border-radius:9px;">K</span>
       <strong style="font-size:14px;">Klix Soluções</strong>
     </a>
-    <span class="footer__meta">Rio de Janeiro · Soluções com IA para negócios</span>
+    <span class="footer__meta">Rio de Janeiro · IA que se adapta ao seu negócio</span>
   </div>
 </footer>
 
