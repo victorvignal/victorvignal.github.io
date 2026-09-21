@@ -74,6 +74,26 @@
 
     /* ===== hero editorial ===== */
     .hero { padding: 140px 0 110px; position: relative; }
+
+    .hero__visual {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+      opacity: 0.9;
+    }
+    .hero__visual .net {
+      position: absolute; right: -5%; top: 0;
+      width: 62%; height: 100%;
+      opacity: 0.7;
+    }
+    @media (max-width: 900px) {
+      .hero__visual .net { opacity: 0.25; width: 100%; }
+    }
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(70px); opacity: 0.5;
+    }
+    .orb--1 { width: 340px; height: 340px; background: rgba(139,124,246,0.16); top: -80px; right: -60px; }
+    .orb--2 { width: 260px; height: 260px; background: rgba(56,189,248,0.1); bottom: -60px; right: 30%; }
+    .orb--3 { width: 200px; height: 200px; background: rgba(139,124,246,0.09); top: 40%; left: -80px; }
     .hero::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
       background:
@@ -171,12 +191,23 @@
     }
     .steps { display: grid; grid-template-columns: 1fr; gap: 0; }
     .step {
-      display: grid; grid-template-columns: 90px 1fr; gap: 24px;
-      padding: 28px 0; border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 72px 1fr; gap: 24px;
+      padding: 32px 0; border-top: 1px solid var(--border);
+      align-items: start;
     }
+    .step__icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-glow);
+      display: grid; place-items: center;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .step__icon svg { width: 24px; height: 24px; }
     .step__num {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 13px; color: var(--accent); padding-top: 6px;
+      font-size: 13px; color: var(--text-faint);
+      display: block; margin-bottom: 8px;
     }
     .step strong { display: block; font-size: 1.08rem; margin-bottom: 6px; letter-spacing: -0.01em; }
     .step p { color: var(--text-dim); font-size: 0.95rem; max-width: 560px; }
@@ -246,6 +277,39 @@
 
   <!-- HERO EDITORIAL -->
   <section class="hero">
+    <!-- visual: rede neural abstrata (CSS puro) -->
+    <div class="hero__visual" aria-hidden="true">
+      <div class="orb orb--1"></div>
+      <div class="orb orb--2"></div>
+      <div class="orb orb--3"></div>
+      <svg class="net" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8b7cf6" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.5"/>
+          </linearGradient>
+        </defs>
+        <!-- conexões -->
+        <g stroke="url(#lineGrad)" stroke-width="1" fill="none" opacity="0.45">
+          <path d="M100,120 L280,80 L460,140 L640,90"/>
+          <path d="M120,300 L300,240 L480,320 L680,250"/>
+          <path d="M100,120 L300,240 M280,80 L480,320 M460,140 L300,240 M640,90 L680,250 M460,140 L680,250"/>
+          <path d="M300,240 L560,430 M480,320 L560,430 M680,250 L560,430"/>
+        </g>
+        <!-- nós -->
+        <g fill="#8b7cf6">
+          <circle cx="100" cy="120" r="5"><animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="280" cy="80" r="4"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+          <circle cx="460" cy="140" r="6"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle>
+          <circle cx="640" cy="90" r="4"><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" repeatCount="indefinite"/></circle>
+          <circle cx="300" cy="240" r="6" fill="#38bdf8"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/></circle>
+          <circle cx="480" cy="320" r="5"><animate attributeName="opacity" values="1;0.4;1" dur="2.8s" repeatCount="indefinite"/></circle>
+          <circle cx="120" cy="300" r="4" fill="#38bdf8"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.8s" repeatCount="indefinite"/></circle>
+          <circle cx="680" cy="250" r="5" fill="#38bdf8"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="560" cy="430" r="6"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.4s" repeatCount="indefinite"/></circle>
+        </g>
+      </svg>
+    </div>
     <div class="container hero__inner">
       <p class="hero__tag">Klix Soluções · Rio de Janeiro</p>
       <h1>Seu negócio já tem o processo. A gente coloca <em>a IA</em> nele.</h1>
@@ -301,22 +365,38 @@
       <h2>Como a gente trabalha</h2>
       <div class="steps">
         <div class="step">
-          <span class="step__num">/01</span>
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
           <div>
+            <span class="step__num">/01</span>
             <strong>Briefing do fluxo</strong>
             <p>Uma conversa pra entender onde o processo trava hoje. Sem formulário gigante.</p>
           </div>
         </div>
         <div class="step">
-          <span class="step__num">/02</span>
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
           <div>
+            <span class="step__num">/02</span>
             <strong>Montagem em cima do que existe</strong>
             <p>A solução se encaixa no WhatsApp, planilha, agenda ou sistema que você já usa.</p>
           </div>
         </div>
         <div class="step">
-          <span class="step__num">/03</span>
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
           <div>
+            <span class="step__num">/03</span>
             <strong>No ar em dias</strong>
             <p>Você vê funcionando de verdade antes de decidir expandir pra outras frentes.</p>
           </div>
