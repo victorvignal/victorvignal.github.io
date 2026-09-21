@@ -54,12 +54,7 @@
     }
     .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
     .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--text); }
-    .brand__mark {
-      width: 36px; height: 36px; border-radius: 11px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid; place-items: center;
-      color: #060913; font-weight: 800; font-size: 16px;
-    }
+    .brand__logo { height: 26px; width: auto; display: block; }
     .brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; display: block; }
     .brand span { display: block; font-size: 11px; color: var(--text-faint); }
     .nav__cta {
@@ -261,7 +256,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a href="#top" class="brand">
-      <span class="brand__mark">K</span>
+      <img class="brand__logo" src="assets/logo-mark.png" alt="Klix Soluções" />
       <div>
         <strong>Klix Soluções</strong>
         <span>IA sob medida</span>
@@ -421,7 +416,7 @@
 <footer class="footer">
   <div class="container footer__row">
     <a href="#top" class="brand">
-      <span class="brand__mark" style="width:28px;height:28px;font-size:13px;border-radius:9px;">K</span>
+      <img class="brand__logo" src="assets/logo-mark.png" alt="Klix Soluções" style="height:22px;" />
       <strong style="font-size:14px;">Klix Soluções</strong>
     </a>
     <span class="footer__meta">Rio de Janeiro · IA que se adapta ao seu negócio</span>
